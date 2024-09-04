@@ -11,16 +11,16 @@
         <picture>
             <source srcset="{{ image|makeThumb(width, height, 'webp', mode) }}" type="image/webp">
             <source srcset="{{ image|makeThumb(width, height, ext, mode) }}" type="image/{{ ext }}">
-            <img 
-                class="{{ classes }}" 
+            <img
+                class="{{ classes }}"
                 src="{{ image|makeThumb(width, height, ext, mode, quality) }}"
                 alt="{{ alt }}"
-                width="{{ width }}" 
-                height="{{ height }}" 
+                width="{{ width }}"
+                height="{{ height }}"
                 {% if lazyload %}
                     loading="lazy"
                 {% endif %}
-            >
+            />
         </picture>
     {% endif %}
 {% endif %}
