@@ -1,0 +1,9 @@
+@layer components {
+	.switch {
+		@apply w-40 h-24 relative shrink-0 bg-neutral-40;
+
+		&:after {
+			@apply content-[''] size-16 absolute top-4 left-4 rounded-full bg-neutral-10 transition-all;
+		}
+	}
+}

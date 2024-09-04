@@ -1,6 +1,6 @@
 @layer base {
 	body {
-		@apply font-body text-base antialiased;
+		@apply antialiased font-body text-base text-neutral-900 bg-background;
 	}
 
 	a {
