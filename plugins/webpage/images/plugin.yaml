@@ -1,0 +1,6 @@
+plugin:
+    name: 'webpage.images::lang.plugin.name'
+    description: 'webpage.images::lang.plugin.description'
+    author: Bk <3
+    icon: oc-icon-image
+    homepage: ''

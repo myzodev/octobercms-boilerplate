@@ -1,0 +1,177 @@
+tabs:
+    fields:
+        disable_cookies_warning:
+            label: 'webpage.gdpr::lang.settings.cookies_disable_warning'
+            span: auto
+            mode: danger
+            trigger:
+                action: show
+                field: disable_cookies
+                condition: checked
+            type: hint
+            comment: 'webpage.gdpr::lang.settings.cookies_disable_warning_comment'
+            tab: 'webpage.gdpr::lang.tabs.cookies'
+        cookies:
+            label: ''
+            prompt: 'webpage.gdpr::lang.add_cookie'
+            displayMode: accordion
+            showReorder: 1
+            showDuplicate: 1
+            itemsExpanded: false
+            span: full
+            type: repeater
+            tab: 'webpage.gdpr::lang.tabs.cookies'
+            form:
+                fields:
+                    cookie_title:
+                        label: 'webpage.gdpr::lang.cookie_title'
+                        span: auto
+                        required: 0
+                        type: text
+                    cookie_description:
+                        label: 'webpage.gdpr::lang.cookie_description'
+                        size: huge
+                        span: auto
+                        required: 0
+                        type: textarea
+                    cookie_slug:
+                        label: 'webpage.gdpr::lang.cookie_slug'
+                        span: left
+                        required: 1
+                        preset:
+                            field: cookie_title
+                            type: slug
+                        type: text
+                    is_required:
+                        label: 'webpage.gdpr::lang.required'
+                        span: left
+                        type: checkbox
+                        comment: 'webpage.gdpr::lang.required_comments'
+                    is_enabled:
+                        label: 'webpage.gdpr::lang.enabled'
+                        span: left
+                        type: checkbox
+                        comment: 'webpage.gdpr::lang.enabled_comment'
+                    section_scripts:
+                        label: 'webpage.gdpr::lang.section_scripts'
+                        span: full
+                        type: section
+                    scripts:
+                        label: ''
+                        prompt: 'Add script'
+                        displayMode: accordion
+                        itemsExpanded: false
+                        span: full
+                        type: repeater
+                        commentAbove: 'webpage.gdpr::lang.scripts_comment'
+                        form:
+                            fields:
+                                script_title:
+                                    label: 'webpage.gdpr::lang.script_title'
+                                    span: full
+                                    type: text
+                                script_code:
+                                    label: 'webpage.gdpr::lang.script_code'
+                                    size: large
+                                    language: html
+                                    span: full
+                                    required: 1
+                                    type: codeeditor
+        cookie_bar_title:
+            label: 'webpage.gdpr::lang.cookie_bar_title'
+            span: auto
+            required: 1
+            type: text
+            tab: 'webpage.gdpr::lang.tabs.cookie_bar'
+        cookie_bar_description:
+            label: 'webpage.gdpr::lang.cookie_bar_description'
+            size: small
+            span: full
+            required: 1
+            type: textarea
+            tab: 'webpage.gdpr::lang.tabs.cookie_bar'
+        section_buttons:
+            label: 'webpage.gdpr::lang.cookie_bar_section_buttons'
+            span: full
+            type: section
+            tab: 'webpage.gdpr::lang.tabs.cookie_bar'
+        cookie_bar_buttons:
+            label: ''
+            prompt: 'webpage.gdpr::lang.cookie_bar_add_button'
+            maxItems: '3'
+            displayMode: accordion
+            itemsExpanded: false
+            span: full
+            type: repeater
+            tab: 'webpage.gdpr::lang.tabs.cookie_bar'
+            form:
+                fields:
+                    button_title:
+                        label: 'webpage.gdpr::lang.buttons.title'
+                        span: auto
+                        required: 1
+                        type: text
+                    button_class:
+                        label: 'webpage.gdpr::lang.buttons.style'
+                        options:
+                            button-primary: Primary
+                            button-secondary: Secondary
+                        showSearch: true
+                        span: right
+                        type: dropdown
+                        comment: 'webpage.gdpr::lang.buttons.style_comment'
+                    allow_selection:
+                        label: 'webpage.gdpr::lang.buttons.allow_selection'
+                        span: left
+                        default: 1
+                        type: checkbox
+                        comment: 'webpage.gdpr::lang.buttons.allow_selection_comment'
+                    ruler_buttons:
+                        span: full
+                        trigger:
+                            action: show
+                            field: allow_selection
+                            condition: unchecked
+                        type: ruler
+                    allow_all:
+                        label: 'webpage.gdpr::lang.buttons.allow_all'
+                        span: left
+                        trigger:
+                            action: show
+                            field: allow_selection
+                            condition: unchecked
+                        type: checkbox
+                        comment: 'webpage.gdpr::lang.buttons.allow_all_comment'
+                    deny_all:
+                        label: 'webpage.gdpr::lang.buttons.deny_all'
+                        span: right
+                        trigger:
+                            action: show
+                            field: allow_selection
+                            condition: unchecked
+                        type: checkbox
+                        comment: 'webpage.gdpr::lang.buttons.deny_all_comment'
+        cookies_expiration_days:
+            label: 'webpage.gdpr::lang.settings.cookies_expiration_days'
+            span: auto
+            default: '365'
+            min: '1'
+            step: '1'
+            type: number
+            comment: 'webpage.gdpr::lang.settings.cookies_expiration_days_comment'
+            tab: 'webpage.gdpr::lang.tabs.settings'
+        cookie_bar_mode:
+            label: 'webpage.gdpr::lang.settings.cookie_bar_mode'
+            options:
+                expanded: 'webpage.gdpr::lang.settings.cookie_bar_mode_expanded'
+            showSearch: 0
+            span: right
+            type: dropdown
+            comment: 'webpage.gdpr::lang.settings.cookie_bar_mode_comment'
+            tab: 'webpage.gdpr::lang.tabs.settings'
+        disable_cookies:
+            label: 'webpage.gdpr::lang.settings.cookies_disable'
+            span: auto
+            type: switch
+            comment: 'webpage.gdpr::lang.settings.cookies_disable_comment'
+            tab: 'webpage.gdpr::lang.tabs.settings'

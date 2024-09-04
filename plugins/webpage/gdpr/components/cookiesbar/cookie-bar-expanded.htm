@@ -1,0 +1,33 @@
+<h4 class="mb-10">{{ settings.cookie_bar_title }}</h4>
+<p class="text-base">{{ settings.cookie_bar_description }}</p>
+
+<form id="cookies-form" data-request="{{ __SELF__ }}::onConsent" data-request-flash="*">
+    <div class="flex flex-wrap my-16 items-center border border-neutral-100 rounded-16">
+        {% for cookie in settings.cookies %}
+            <div class="min-w-[150px] flex-1 border-r border-neutral-100 last:border-r-0">
+                <label class="py-16 md:py-24 mb-0 flex flex-col items-center {{ cookie.is_required ? 'pointer-events-none opacity-50' : '' }}" for="{{ cookie.cookie_slug }}">
+                    <input
+                        id="{{ cookie.cookie_slug }}"
+                        class="peer hidden"
+                        name="{{ cookie.cookie_slug }}"
+                        type="checkbox"
+                        hidden
+                        {{ cookie.is_enabled ? 'checked' : '' }}
+                        {{ cookie.is_required ? 'required readonly' : '' }}
+                    >
+
+                    <span class="switch peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:bg-primary-300"></span>
+
+                    <span class="mt-8 font-bold whitespace-nowrap">{{ cookie.cookie_title }}</span>
+                </label>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-8 md:gap-16">
+        {% for button in settings.cookie_bar_buttons %}
+            {% set buttonClass = button.allow_selection ? 'button-allow-selection' : button.allow_all ? 'button-allow-all' : button.deny_all ? 'button-deny-all' : '' %}
+            <button class="{{ buttonClass }} button flex-1" type="submit">{{ button.button_title }}</button>
+        {% endfor %}
+    </div>
+</form>

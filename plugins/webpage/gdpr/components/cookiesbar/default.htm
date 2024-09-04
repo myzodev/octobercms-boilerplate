@@ -1,0 +1,17 @@
+{% if not settings.disable_cookies %}
+    {% set show = true %}
+
+    {% if cookiesConsent is defined and cookiesConsent is not empty %}
+        {% set show = false %}
+    {% endif %}
+
+    {% if show and settings is not null %}
+        <div id="cookie-bar" class="p-16 w-full max-h-screen fixed left-0 bottom-0 overflow-y-auto z-100">
+            <div class="p-24 md:p-32 mx-auto max-w-[1100px] rounded-16 bg-neutral-30">
+                {% partial __SELF__ ~ '::cookie-bar-' ~ settings.cookie_bar_mode  %}
+            </div>
+        </div>
+    {% endif %}
+
+    {% partial '@run-scripts' %}
+{% endif %}

@@ -1,0 +1,14 @@
+@layer base {
+	body {
+		@apply font-body text-base antialiased;
+	}
+
+	a {
+		@apply inline-block;
+	}
+
+	img,
+	svg {
+		@apply w-full;
+	}
+}

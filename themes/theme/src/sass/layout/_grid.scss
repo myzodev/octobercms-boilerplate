@@ -1,0 +1,13 @@
+@layer components {
+	.section-offset {
+		@apply py-80;
+	}
+
+	.row {
+		@apply grid grid-cols-12 gap-16;
+	}
+
+	.row-flex {
+		@apply flex flex-col md:flex-row gap-16;
+	}
+}

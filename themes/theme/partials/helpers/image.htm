@@ -1,0 +1,25 @@
+{% if ext is empty %}
+    {% set ext = 'jpeg' %}
+{% endif %}
+
+{% set imageExtension = image|split('.')|last %}
+
+{% if image %}
+    <picture>
+        <source srcset="{{ image|makeThumb(width, height, 'webp', mode) }}" type="image/webp">
+        <source srcset="{{ image|makeThumb(width, height, ext, mode) }}" type="image/{{ ext }}">
+        <img 
+            class="{{ classes }}" 
+            alt="{{ alt }}" 
+            width="{{ width }}" 
+            height="{{ height }}" 
+            {% if lazy_load %}
+                data-src="{{ image|makeThumb(width, height, ext, mode, quality) }}" 
+                data-lazy-load 
+                loading="lazy"
+            {% else %}
+                src="{{ image|makeThumb(width, height, ext, mode, quality) }}"
+            {% endif %}
+        >
+    </picture>
+{% endif %}

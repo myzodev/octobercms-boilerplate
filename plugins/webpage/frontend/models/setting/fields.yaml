@@ -1,0 +1,121 @@
+tabs:
+    fields:
+        section_menu:
+            label: 'webpage.frontend::lang.menu.page_title'
+            span: full
+            type: section
+            tab: 'webpage.frontend::lang.menu.tab'
+        menu:
+            label: ''
+            prompt: 'webpage.frontend::lang.menu.add_new_menu_item'
+            displayMode: builder
+            span: full
+            type: repeater
+            tab: 'webpage.frontend::lang.menu.tab'
+            form:
+                fields:
+                    menu_title:
+                        label: 'webpage.frontend::lang.menu.menu_title'
+                        span: auto
+                        type: text
+                    menu_link:
+                        label: 'webpage.frontend::lang.menu.menu_link'
+                        singleMode: 1
+                        span: auto
+                        type: pagefinder
+                    menu_enable_submenu:
+                        label: 'webpage.frontend::lang.menu.enable_submenu'
+                        span: auto
+                        type: switch
+                    submenu:
+                        label: 'webpage.frontend::lang.menu.submenu'
+                        prompt: 'webpage.frontend::lang.menu.add_new_submenu_item'
+                        displayMode: accordion
+                        span: full
+                        trigger:
+                            action: show
+                            field: menu_enable_submenu
+                            condition: checked
+                        type: repeater
+                        form:
+                            fields:
+                                submenu_title:
+                                    label: 'webpage.frontend::lang.menu.submenu_title'
+                                    span: auto
+                                    type: text
+                                submenu_link:
+                                    label: 'webpage.frontend::lang.menu.submenu_link'
+                                    singleMode: 1
+                                    span: auto
+                                    type: pagefinder
+        section_contact_information:
+            label: 'webpage.frontend::lang.contact.contact_information'
+            span: left
+            type: section
+            tab: 'webpage.frontend::lang.contact.tab'
+        section_social_media:
+            label: 'webpage.frontend::lang.contact.social_media'
+            span: right
+            type: section
+            tab: 'webpage.frontend::lang.contact.tab'
+        contact_information:
+            label: ''
+            prompt: 'Add new item'
+            displayMode: builder
+            span: left
+            type: repeater
+            icon: icon-quote-right
+            tab: 'webpage.frontend::lang.contact.tab'
+            form:
+                fields:
+                    title:
+                        label: 'webpage.frontend::lang.contact.contact_information_title'
+                        span: full
+                        type: text
+                    content:
+                        label: 'webpage.frontend::lang.contact.contact_information_content'
+                        span: full
+                        type: text
+        social_media:
+            label: ''
+            prompt: 'Add new item'
+            displayMode: builder
+            span: right
+            type: repeater
+            icon: icon-quote-right
+            tab: 'webpage.frontend::lang.contact.tab'
+            form:
+                fields:
+                    title:
+                        label: 'webpage.frontend::lang.contact.social_media_title'
+                        span: full
+                        type: text
+                    url:
+                        label: 'webpage.frontend::lang.contact.social_media_url'
+                        span: full
+                        type: pagefinder
+        section_brand:
+            label: 'webpage.frontend::lang.brand.page_title'
+            span: full
+            type: section
+            tab: 'webpage.frontend::lang.brand.tab'
+        logo:
+            label: 'webpage.frontend::lang.brand.logo'
+            mode: image
+            maxItems: '1'
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: mediafinder
+            tab: 'webpage.frontend::lang.brand.tab'
+        favicon:
+            label: 'webpage.frontend::lang.brand.favicon'
+            mode: image
+            maxItems: '1'
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: mediafinder
+            tab: 'webpage.frontend::lang.brand.tab'

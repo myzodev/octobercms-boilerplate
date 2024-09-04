@@ -1,0 +1,8 @@
+v1.0.1:
+    - 'Initialize plugin'
+v1.0.2:
+    - 'Created table webpage_frontend_settings'
+    - builder_table_create_webpage_frontend_settings.php
+v1.0.3:
+    - 'Updated table webpage_frontend_settings'
+    - builder_table_update_webpage_frontend_settings.php

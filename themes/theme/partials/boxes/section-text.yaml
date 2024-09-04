@@ -1,0 +1,9 @@
+handle: section-text
+form:
+    fields:
+        title:
+            type: text
+            label: Title
+        text:
+            type: textarea
+            label: Text 

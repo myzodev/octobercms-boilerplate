@@ -1,0 +1,6 @@
+plugin:
+    name: 'webpage.twig::lang.plugin.name'
+    description: 'webpage.twig::lang.plugin.description'
+    author: Webpage
+    icon: oc-icon-align-left
+    homepage: ''

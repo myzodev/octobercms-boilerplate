@@ -1,0 +1,31 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="format-detection" content="telephone=no">
+
+<meta name="title" content="{{ this.page.meta_title }}">
+<meta name="twitter:title" content="{{ this.page.meta_title }}">
+<meta property="og:title" content="{{ this.page.meta_title }}" />
+
+<meta name="description" content="{{ this.page.meta_description }}">
+<meta name="twitter:description" content="{{ this.page.meta_description }}">
+<meta property="og:description" content="{{ this.page.meta_description }}" />
+
+<title>{{ this.page.meta_title }}</title>
+
+{% meta %}
+
+<link rel="icon" href="{{ settings.favicon|media }}">
+
+<link rel="preload" href="{{ 'assets/fonts/Lato-Black.woff2'|theme }}" as="font" type="font/woff2" crossorigin="anonymous" >
+<link rel="preload" href="{{ 'assets/fonts/NunitoSans-Regular.woff2'|theme }}" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="{{ 'assets/fonts/NunitoSans-Bold.woff2'|theme }}" as="font" type="font/woff2" crossorigin="anonymous">
+
+<link href="{{ this.layout.styles }}" rel="stylesheet" id="style">
+
+{% styles %}
+
+<script src="{{ this.layout.scripts }}" defer></script>
+
+{% scripts %}
+
+{% framework %}

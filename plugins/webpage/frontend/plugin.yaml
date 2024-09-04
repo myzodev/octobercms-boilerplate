@@ -1,0 +1,14 @@
+plugin:
+    name: 'webpage.frontend::lang.plugin.name'
+    description: 'webpage.frontend::lang.plugin.description'
+    author: Michal
+    icon: icon-cogs
+    homepage: ''
+navigation:
+    main-menu-frontend-settings:
+        label: 'webpage.frontend::lang.plugin.name'
+        url: webpage/frontend/settings
+        icon: icon-cogs
+        permissions:
+            - frontend.settings.manage_settings
+        order: '510'

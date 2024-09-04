@@ -1,0 +1,58 @@
+@font-face {
+	font-family: 'Lato';
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+	src: local('Lato'), url('../fonts/Lato-Black.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'NunitoSans';
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+	src: local('NunitoSans'), url('../fonts/NunitoSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'NunitoSans';
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+	src: local('NunitoSans'), url('../fonts/NunitoSans-Bold.woff2') format('woff2');
+}
+
+@layer base {
+	h1 {
+		@apply h1;
+	}
+
+	h2 {
+		@apply h2;
+	}
+
+	h3 {
+		@apply h3;
+	}
+
+	h4 {
+		@apply h4;
+	}
+
+	h5 {
+		@apply h5;
+	}
+
+	h6 {
+		@apply h6;
+	}
+
+	p,
+	small {
+		@apply block;
+	}
+
+	small {
+		@apply text-sm;
+	}
+}

@@ -1,0 +1,7 @@
+name: Settings
+form: $/webpage/frontend/models/setting/fields.yaml
+modelClass: Webpage\Frontend\Models\Setting
+defaultRedirect: webpage/frontend/settings
+update:
+    redirect: webpage/frontend/settings
+    redirectClose: webpage/frontend/settings

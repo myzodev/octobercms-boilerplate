@@ -1,0 +1,23 @@
+<nav class="navbar" x-data="navbar" :class="isScrolled ? 'navbar-scrolled' : ''">
+    <div class="container py-16 flex justify-between items-center">
+        <a href="{{ 'domov'|boxesPage }}">
+            {% partial 'components/_logo' %}
+        </a>
+
+        <ul class="navbar-menu">
+            {% for item in settings.menu %}
+                {% set link = link(item.menu_link) %}
+                
+                <li>
+                    <a class="navbar-menu-item" href="{{ link.url }}">{{ item.menu_title }}</a>
+                </li>
+            {% endfor %}
+
+            {% if loggedIn %}
+                <li>
+                    <a class="navbar-menu-item" href="{{ backendURL }}" target="_blank">Admin</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

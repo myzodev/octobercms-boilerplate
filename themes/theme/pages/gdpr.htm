@@ -1,0 +1,16 @@
+url = "/gdpr"
+layout = "default"
+title = "GDPR"
+meta_title = "GDPR"
+meta_description = "GDPR"
+
+[gdpr]
+==
+{% if not gdpr.title or not gdpr.text  %}
+    {% do abort(404) %}
+{% endif %}
+
+<div class="container section-offset">
+    <h1 class="mb-24 text-center">{{ gdpr.title }}</h1>
+    {{ gdpr.text|raw }}
+</div>

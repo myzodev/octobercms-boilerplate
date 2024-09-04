@@ -1,0 +1,5 @@
+plugin:
+    name: 'webpage.helpers::lang.plugin.name'
+    description: 'webpage.helpers::lang.plugin.description'
+    author: Webpage
+    icon: oc-icon-archive
