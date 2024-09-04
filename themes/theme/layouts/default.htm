@@ -5,13 +5,6 @@ description = "Default layout"
 [cookiesBar]
 ==
 <?php
-function onInit()
-{
-    $themePath = 'themes/' . $this->theme->getDirName() . '/assets';
-    $this->layout['styles'] = url(mix('css/app.css', $themePath));
-    $this->layout['scripts'] = url(mix('js/app.js', $themePath));
-}
-
 function onStart() 
 {
     $this['loggedIn'] = BackendAuth::check();
@@ -22,15 +15,23 @@ function onStart()
 {% set settings = webpageSettings.record %}
 
 <!DOCTYPE html> 
-<html lang="{{ this.site.locale|default('sk') }}">
+<html lang="{{ this.site.locale|default('en') }}">
 	<head>
         {% partial 'layout/meta' %}
 	</head>
 	<body>
         {% component 'cookiesBar' %}
+    
+        <header>
+            {% partial 'layout/navbar' %}
+        </header>
 
         <main>
             {% page %} 
         </main>
+
+        <footer>
+            {% partial 'layout/footer' %}
+        </footer>
 	</body>
 </html>

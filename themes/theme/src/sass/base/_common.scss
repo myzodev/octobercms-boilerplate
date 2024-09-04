@@ -7,6 +7,11 @@
 		@apply inline-block;
 	}
 
+	p,
+	small {
+		@apply block;
+	}
+
 	img,
 	svg {
 		@apply w-full;

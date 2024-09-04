@@ -12,19 +12,15 @@
 
 <title>{{ this.page.meta_title }}</title>
 
-{% meta %}
-
 <link rel="icon" href="{{ settings.favicon|media }}">
 
-<link rel="preload" href="{{ 'assets/fonts/Lato-Black.woff2'|theme }}" as="font" type="font/woff2" crossorigin="anonymous" >
-<link rel="preload" href="{{ 'assets/fonts/NunitoSans-Regular.woff2'|theme }}" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="{{ 'assets/fonts/NunitoSans-Bold.woff2'|theme }}" as="font" type="font/woff2" crossorigin="anonymous">
+{% partial 'layout/fonts' %}
 
-<link href="{{ this.layout.styles }}" rel="stylesheet" id="style">
+{{ vite([ 'src/sass/app.scss' ]) }}
 
 {% styles %}
 
-<script src="{{ this.layout.scripts }}" defer></script>
+{{ vite([ 'src/js/app.js' ]) }}
 
 {% scripts %}
 

@@ -22,10 +22,7 @@ class CookiesBar extends BaseComponent
 
     public function onRun(): void
     {
-        $theme = Theme::getActiveTheme();
-        $themeName = $theme->getDirName();
-        $path = "/themes/{$themeName}/assets/plugins/webpage/gdpr/js/cookie-bar.js";
-        
+        $path = "/plugins/webpage/gdpr/assets/js/cookie-bar.js";
         $this->addJs($path, ['defer' => true]);
     }
 

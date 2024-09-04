@@ -1,37 +1,3 @@
-<div class="bg-neutral-20 dark:bg-neutral-700">
-    <div class="container py-32">
-        <a href="{{ 'domov'|boxesPage }}">
-            {% partial 'components/_logo' %}
-        </a>
-    </div>
+<div>
+    Footer
 </div>
-
-<aside class="bg-neutral-30 dark:bg-neutral-800">
-    <div class="container py-16 flex justify-between items-center">
-        <small>
-            OctoberCMS Boilerplate &copy; {{ 'now' | date('Y') }}
-        </small>
-        
-        <label class="mb-0 flex" for="theme-switcher" x-data="themeSwitcher" x-cloak>
-            <input
-                id="theme-switcher"
-                class="peer hidden"
-                name="theme-switcher"
-                type="checkbox"
-                hidden
-                @input="toggleTheme()"
-                :checked="theme === 'dark' ? true : false"
-            >
-            
-            <span class="switch w-56 h-32 relative after:w-24 after:h-24 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:bg-neutral-200">
-                <span class="w-16 h-16 absolute top-8 left-8 z-10">
-                    {{ 'assets/images/icons/sun.svg'|theme|svg }}
-                </span>
-        
-                <span class="w-16 h-16 absolute top-8 left-unset right-8 z-10">
-                    {{ 'assets/images/icons/moon.svg'|theme|svg }}
-                </span>
-            </span>
-        </label>
-    </div>
-</aside>

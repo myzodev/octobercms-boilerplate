@@ -1,0 +1,29 @@
+<link rel="preload" href="{{ 'assets/fonts/Lato-Black.woff2'|theme }}" as="font" type="font/woff2" crossorigin="anonymous" >
+<link rel="preload" href="{{ 'assets/fonts/NunitoSans-Regular.woff2'|theme }}" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="{{ 'assets/fonts/NunitoSans-Bold.woff2'|theme }}" as="font" type="font/woff2" crossorigin="anonymous">
+
+<style>
+    @font-face {
+        font-family: 'Lato';
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+        src: local('Lato'), url("{{ 'assets/fonts/Lato-Black.woff2'|theme }}") format('woff2');
+    }
+    
+    @font-face {
+        font-family: 'NunitoSans';
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+        src: local('NunitoSans'), url("{{ 'assets/fonts/NunitoSans-Regular.woff2'|theme }}") format('woff2');
+    }
+    
+    @font-face {
+        font-family: 'NunitoSans';
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+        src: local('NunitoSans'), url("{{ 'assets/fonts/NunitoSans-Bold.woff2'|theme }}") format('woff2');
+    }
+</style>

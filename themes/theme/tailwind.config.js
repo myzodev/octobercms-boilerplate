@@ -19,17 +19,6 @@ module.exports = {
 				90: '90',
 				100: '100',
 			},
-
-			keyframes: {
-				'slide-out': {
-					'0%': { transform: 'translateY(0)' },
-					'100%': { transform: 'translateY(100%)' },
-				},
-			},
-
-			animation: {
-				'slide-out': 'slide-out 250ms ease-in-out both',
-			},
 		},
 
 		screens: {
@@ -51,14 +40,15 @@ module.exports = {
 		},
 
 		fontSize: {
-			xs: ['0.75rem', '1.13rem'],
-			sm: ['0.88rem', '1.31rem'],
-			base: ['1rem', '1.5rem'],
-			subheading: ['1.13rem', '1.69rem'],
+			xs: ['0.75rem', '150%'],
+			sm: ['0.88rem', '150%'],
+			base: ['1rem', '150%'],
+			subheading: ['1.13rem', '150%'],
 		},
 
 		spacing: {
 			unset: 'unset',
+			none: 'none',
 			0: 0,
 			1: '0.063rem',
 			2: '0.125rem',
@@ -85,20 +75,34 @@ module.exports = {
 			112: '7rem',
 			120: '7.5rem',
 			128: '8rem',
-			136: '9.5rem',
-			144: '10rem',
-			152: '10.5rem',
-			160: '11rem',
-			168: '11.5rem',
-			176: '12rem',
-			184: '12.5rem',
-			192: '13rem',
-			200: '13.5rem',
-			208: '14rem',
-			216: '14.5rem',
-			224: '15rem',
-			232: '15.5rem',
-			240: '16rem',
+			136: '8.5rem',
+			144: '9rem',
+			152: '9.5rem',
+			160: '10rem',
+			168: '10.5rem',
+			176: '11rem',
+			184: '11.5rem',
+			192: '12rem',
+			200: '12.5rem',
+			208: '13rem',
+			216: '13.5rem',
+			224: '14rem',
+			232: '14.5rem',
+			240: '15rem',
+			248: '15.5rem',
+			256: '16rem',
+			264: '16.5rem',
+			272: '17rem',
+			280: '17.5rem',
+			288: '18rem',
+			296: '18.5rem',
+			304: '19rem',
+			312: '19.5rem',
+			320: '20rem',
+			328: '20.5rem',
+			336: '21rem',
+			344: '21.5rem',
+			352: '22rem',
 			full: '100%',
 		},
 
@@ -118,71 +122,37 @@ module.exports = {
 
 		colors: {
 			transparent: 'transparent',
+            background: '#FFFBFC',
 
 			primary: {
-				50: '#e6f7fd',
-				100: '#6bd0f6',
-				200: '#2bbcf2',
-				300: '#00aeef',
-				400: '#007aa7',
-				500: '#006a92',
-			},
-
-			secondary: {
-				50: '#E6FFFA',
-				100: '#6BFFE4',
-				200: '#2BFFD9',
-				300: '#00FFD1',
-				400: '#00B392',
-				500: '#009C7F',
-			},
-
-			success: {
-				50: '#edf3ea',
-				100: '#98bc88',
-				200: '#6b9f54',
-				300: '#4d8b31',
-				400: '#366122',
-				500: '#2f551e',
-			},
-
-			warning: {
-				50: '#fefae8',
-				100: '#fae177',
-				200: '#f8d43d',
-				300: '#f7cb15',
-				400: '#ad8e0f',
-				500: '#977c0d',
-			},
-
-			error: {
-				50: '#feeae6',
-				100: '#f9856d',
-				200: '#f6502f',
-				300: '#f42c04',
-				400: '#ab1f03',
-				500: '#951b02',
+				50: '#fce6eb',
+				75: '#f296ac',
+				100: '#ec6b8a',
+				200: '#e42b57',
+				300: '#df0035',
+				400: '#9c0025',
+				500: '#880020',
 			},
 
 			neutral: {
-				10: '#fafafb',
-				20: '#f5f6f6',
-				30: '#eceded',
-				40: '#e0e1e2',
-				50: '#c3c6c7',
-				60: '#b5b8ba',
-				70: '#a9adaf',
-				80: '#9a9fa1',
-				90: '#8c9194',
-				100: '#7d8387',
-				200: '#6f7679',
-				300: '#61686c',
-				400: '#555c61',
-				500: '#464f53',
-				600: '#3a4348',
-				700: '#293339',
-				800: '#1b252b',
-				900: '#0f1a20',
+				10: '#fbfbfb',
+				20: '#f6f6f6',
+				30: '#ededed',
+				40: '#e2e2e3',
+				50: '#c7c7c8',
+				60: '#b9b9bb',
+				70: '#aeaeb0',
+				80: '#a1a1a3',
+				90: '#939396',
+				100: '#868689',
+				200: '#78787c',
+				300: '#6b6b6e',
+				400: '#5f5f64',
+				500: '#525256',
+				600: '#47474b',
+				700: '#37373c',
+				800: '#29292f',
+				900: '#1e1e24',
 			},
 		},
 	},
@@ -193,52 +163,52 @@ module.exports = {
 		plugin(function ({ addComponents, theme }) {
 			addComponents({
 				'.h1': {
-					fontSize: '3.81rem',
-					fontFamily: theme('fontFamily.heading'),
-					fontWeight: theme('fontWeight.bold'),
-					lineHeight: '115%',
-					'@media (max-width: 1024px)': {
-						fontSize: 'calc(3rem + 1.5vw)',
-					},
-				},
-
-				'.h2': {
 					fontSize: '3rem',
 					fontFamily: theme('fontFamily.heading'),
 					fontWeight: theme('fontWeight.bold'),
 					lineHeight: '115%',
-					'@media (max-width: 1024px)': {
-						fontSize: 'calc(2.5rem + 0.9vw)',
+					[`@media (min-width: ${theme('screens.md')})`]: {
+						fontSize: '3.81rem',
+					},
+				},
+
+				'.h2': {
+					fontSize: '2.5rem',
+					fontFamily: theme('fontFamily.heading'),
+					fontWeight: theme('fontWeight.bold'),
+					lineHeight: '115%',
+					[`@media (min-width: ${theme('screens.md')})`]: {
+						fontSize: '3rem',
 					},
 				},
 
 				'.h3': {
-					fontSize: '2.44rem',
+					fontSize: '2.1rem',
 					fontFamily: theme('fontFamily.heading'),
 					fontWeight: theme('fontWeight.bold'),
 					lineHeight: '115%',
-					'@media (max-width: 1024px)': {
-						fontSize: 'calc(2.1rem + 0.6vw)',
+					[`@media (min-width: ${theme('screens.md')})`]: {
+						fontSize: '2.44rem',
 					},
 				},
 
 				'.h4': {
-					fontSize: '1.94rem',
+					fontSize: '1.75rem',
 					fontFamily: theme('fontFamily.heading'),
 					fontWeight: theme('fontWeight.bold'),
 					lineHeight: '115%',
-					'@media (max-width: 1024px)': {
-						fontSize: 'calc(1.75rem + 0.3vw)',
+					[`@media (min-width: ${theme('screens.md')})`]: {
+						fontSize: '1.94rem',
 					},
 				},
 
 				'.h5': {
-					fontSize: '1.56rem',
+					fontSize: '1.44rem',
 					fontFamily: theme('fontFamily.heading'),
 					fontWeight: theme('fontWeight.bold'),
 					lineHeight: '115%',
-					'@media (max-width: 1024px)': {
-						fontSize: '1.44rem',
+					[`@media (min-width: ${theme('screens.md')})`]: {
+						fontSize: '1.56rem',
 					},
 				},
 
@@ -247,17 +217,20 @@ module.exports = {
 					fontFamily: theme('fontFamily.heading'),
 					fontWeight: theme('fontWeight.bold'),
 					lineHeight: '115%',
-					'@media (max-width: 1024px)': {
+					[`@media (min-width: ${theme('screens.md')})`]: {
 						fontSize: '1.19rem',
 					},
 				},
 
                 '.display': {
-                    fontSize: '5.63rem',
+                    fontSize: '3rem',
                     fontFamily: theme('fontFamily.heading'),
                     lineHeight: '115%',
-                    '@media (max-width: 1024px)': {
-                        fontSize: 'calc(4.2rem + 2vw)',
+                    [`@media (min-width: ${theme('screens.md')})`]: {
+                        fontSize: '4.2rem',
+                    },
+                    [`@media (min-width: ${theme('screens.lg')})`]: {
+                        fontSize: '5.6rem',
                     },
                 },
 			})
