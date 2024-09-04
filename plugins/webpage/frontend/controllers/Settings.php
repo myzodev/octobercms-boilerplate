@@ -1,8 +1,6 @@
 <?php namespace Webpage\Frontend\Controllers;
 
-use BackendMenu;
-use Site;
-use Backend\Behaviors\FormController;
+use BackendMenu, Site;
 use Backend\Behaviors\FormController\HasMultisite;
 use Webpage\Frontend\Models\Setting;
 use Backend\Classes\Controller;
@@ -37,7 +35,7 @@ class Settings extends Controller
         ]);
 
         $this->initForm($model);
-        $this->pageTitle = trans('webpage.frontend::lang.plugin.name');
+        $this->pageTitle = 'webpage.frontend::lang.plugin.name';
     }
 
     public function onSave()
@@ -65,9 +63,7 @@ class Settings extends Controller
     {
         $this->addHandlerToSiteSwitcher();
 
-        if (!get('_site_id') || request()?->ajax()) {
-            return;
-        }
+        if (!get('_site_id') || request()?->ajax()) return;
 
         Setting::firstOrCreate([
             'site_id' => get('_site_id')

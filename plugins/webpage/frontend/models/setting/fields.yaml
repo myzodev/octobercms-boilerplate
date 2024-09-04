@@ -1,13 +1,12 @@
 tabs:
     fields:
         section_menu:
-            label: 'webpage.frontend::lang.menu.page_title'
+            label: 'webpage.frontend::lang.menu.section_title'
             span: full
             type: section
             tab: 'webpage.frontend::lang.menu.tab'
         menu:
-            label: ''
-            prompt: 'webpage.frontend::lang.menu.add_new_menu_item'
+            prompt: 'webpage.frontend::lang.menu.add_menu_item'
             displayMode: builder
             span: full
             type: repeater
@@ -29,7 +28,7 @@ tabs:
                         type: switch
                     submenu:
                         label: 'webpage.frontend::lang.menu.submenu'
-                        prompt: 'webpage.frontend::lang.menu.add_new_submenu_item'
+                        prompt: 'webpage.frontend::lang.menu.add_menu_item'
                         displayMode: accordion
                         span: full
                         trigger:
@@ -49,18 +48,17 @@ tabs:
                                     span: auto
                                     type: pagefinder
         section_contact_information:
-            label: 'webpage.frontend::lang.contact.contact_information'
+            label: 'webpage.frontend::lang.contact.section_title'
             span: left
             type: section
             tab: 'webpage.frontend::lang.contact.tab'
         section_social_media:
-            label: 'webpage.frontend::lang.contact.social_media'
+            label: 'webpage.frontend::lang.contact.socials.section_title'
             span: right
             type: section
             tab: 'webpage.frontend::lang.contact.tab'
         contact_information:
-            label: ''
-            prompt: 'Add new item'
+            prompt: 'webpage.frontend::lang.contact.add_contact_item'
             displayMode: builder
             span: left
             type: repeater
@@ -69,16 +67,15 @@ tabs:
             form:
                 fields:
                     title:
-                        label: 'webpage.frontend::lang.contact.contact_information_title'
+                        label: 'webpage.frontend::lang.contact.title'
                         span: full
                         type: text
                     content:
-                        label: 'webpage.frontend::lang.contact.contact_information_content'
+                        label: 'webpage.frontend::lang.contact.content'
                         span: full
                         type: text
         social_media:
-            label: ''
-            prompt: 'Add new item'
+            prompt: 'webpage.frontend::lang.contact.socials.add_socials_item'
             displayMode: builder
             span: right
             type: repeater
@@ -87,15 +84,15 @@ tabs:
             form:
                 fields:
                     title:
-                        label: 'webpage.frontend::lang.contact.social_media_title'
+                        label: 'webpage.frontend::lang.contact.socials.title'
                         span: full
                         type: text
                     url:
-                        label: 'webpage.frontend::lang.contact.social_media_url'
+                        label: 'webpage.frontend::lang.contact.socials.url'
                         span: full
                         type: pagefinder
         section_brand:
-            label: 'webpage.frontend::lang.brand.page_title'
+            label: 'webpage.frontend::lang.brand.section_title'
             span: full
             type: section
             tab: 'webpage.frontend::lang.brand.tab'

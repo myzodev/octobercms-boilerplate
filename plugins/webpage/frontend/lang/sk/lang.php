@@ -8,30 +8,32 @@
     ],
     'menu' => [
         'tab' => 'Menu',
-        'menu' => 'Menu',
         'menu_title' => 'Položka menu',
         'menu_link' => 'URL',
         'submenu' => 'Podmenu',
         'submenu_title' => 'Položka podmenu',
         'submenu_link' => 'URL',
         'enable_submenu' => 'Povoliť podmenu',
-        'add_new_menu_item' => 'Pridať položku menu',
-        'add_new_submenu_item' => 'Pridať položku podmenu',
-        'page_title' => 'Menu',      
+        'add_menu_item' => 'Pridať položku menu',
+        'section_title' => 'Menu',      
     ],
     'brand' => [
         'tab' => 'Značka',
         'logo' => 'Logo',
         'favicon' => 'Favicon',
-        'page_title' => 'Nastavenia Značky',        
+        'section_title' => 'Nastavenia Značky',        
     ],
     'contact' => [
         'tab' => 'Kontakt',
-        'contact_information' => 'Kontaktné Informácie',
-        'contact_information_title' => 'Názov',
-        'contact_information_content' => 'Obsah',
-        'social_media' => 'Sociálne Média',
-        'social_media_title' => 'Názov',
-        'social_media_url' => 'URL',
+        'section_title' => 'Kontaktné Informácie',
+        'add_contact_item' => 'Pridať nový kontakt',
+        'title' => 'Názov',
+        'content' => 'Obsah',
+         'socials' => [
+            'section_title' => 'Sociálne Siete',
+            'add_socials_item' => 'Pridať novú sociálnu sieť',
+            'title' => 'Názov',
+            'url' => 'URL',
+        ]
     ]
 ];
