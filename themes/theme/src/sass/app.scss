@@ -2,11 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@import './base/common';
+@import './abstract/variables';
+@import './abstract/functions';
+
+@import './base/base';
 @import './base/typography';
 
 @import './components/inputs';
+@import './components/buttons';
 
-@import './helpers/classes';
-
-@import './layout/grid';
+@import './utilities/classes';
+@import './utilities/grid';
