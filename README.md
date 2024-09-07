@@ -48,16 +48,12 @@ npm install
 npm run dev
 ```
 
-<br>
-
 To include the _Vite Dev Server_ assets in your dev environment, set the `APP_ENV` variable in your `.env` file to either `local` or `dev`. Once set, the _Vite Dev Server_ will automatically be included.
 For more detailed information, refer to the [OctoberCMS Vite Plugin](https://github.com/OFFLINE-GmbH/oc-vite-plugin).
 
 ```env
 APP_ENV: local # or dev
 ```
-
-<br>
 
 ***Do not forget to set `APP_ENV` to `production` when done with development.***
 
