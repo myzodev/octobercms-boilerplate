@@ -1,6 +1,0 @@
-plugin:
-    name: 'webpage.gdpr::lang.plugin.name'
-    description: 'webpage.gdpr::lang.plugin.description'
-    author: Webpage
-    icon: oc-icon-laptop
-    homepage: ''

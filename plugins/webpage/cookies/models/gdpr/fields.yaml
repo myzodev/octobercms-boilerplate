@@ -1,10 +1,10 @@
 fields:
     title:
-        label: 'webpage.gdpr::lang.cookie_text_title'
+        label: 'webpage.cookies::lang.cookie_text_title'
         span: full
         type: text
     text:
-        label: 'webpage.gdpr::lang.cookie_text_text'
+        label: 'webpage.cookies::lang.cookie_text_text'
         size: giant
         toolbarButtons: 'fullscreen, bold, italic, underline, strikeThrough, fontSize, fontFamily, color, align, formatOL, formatUL, insertPageLink, undo, redo, selectAll'
         span: full

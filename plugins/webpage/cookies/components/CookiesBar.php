@@ -1,7 +1,7 @@
-<?php namespace Webpage\GDPR\Components;
+<?php namespace Webpage\Cookies\Components;
 
 use Carbon\Carbon;
-use Webpage\GDPR\Models\CookieSetting;
+use Webpage\Cookies\Models\CookieSetting;
 use Webpage\Helpers\Classes\Helpers\BaseComponent;
 
 class CookiesBar extends BaseComponent

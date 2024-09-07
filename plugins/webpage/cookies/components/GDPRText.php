@@ -1,6 +1,8 @@
-<?php namespace Webpage\GDPR\Components;
+<?php
 
-use Webpage\GDPR\Models\GDPR;
+namespace Webpage\Cookies\Components;
+
+use Webpage\Cookies\Models\GDPR;
 use Webpage\Helpers\Classes\Helpers\BaseComponent;
 
 class GDPRText extends BaseComponent
@@ -8,8 +10,8 @@ class GDPRText extends BaseComponent
     public function componentDetails(): array
     {
         return [
-            'name' => 'webpage.gdpr::lang.plugin.name',
-            'description' => 'webpage.gdpr::lang.plugin.name'
+            'name' => 'webpage.cookies::lang.plugin.name',
+            'description' => 'webpage.cookies::lang.plugin.name'
         ];
     }
 

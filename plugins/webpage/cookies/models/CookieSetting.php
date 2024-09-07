@@ -1,4 +1,6 @@
-<?php namespace Webpage\GDPR\Models;
+<?php
+
+namespace Webpage\Cookies\Models;
 
 use System\Models\SettingModel;
 

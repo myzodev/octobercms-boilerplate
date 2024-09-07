@@ -3,7 +3,7 @@
         'name' => 'GDPR',
         'description' => 'GDPR, Cookies...',
         'settings' => [
-            'cookies_settings_title' => 'Cookies',
+            'cookies_settings_title' => 'Cookie-Einstellungen',
             'cookies_settings_description' => 'Cookies verwalten und konfigurieren, Cookie-Leiste und ihre Einstellungen.',
             'cookies_text_title' => 'GDPR',
             'cookies_text_content' => 'Allgemeine Datenschutzverordnung verwalten'

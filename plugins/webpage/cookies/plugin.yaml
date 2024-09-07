@@ -1,0 +1,6 @@
+plugin:
+    name: 'webpage.cookies::lang.plugin.name'
+    description: 'webpage.cookies::lang.plugin.description'
+    author: Webpage
+    icon: oc-icon-laptop
+    homepage: ''

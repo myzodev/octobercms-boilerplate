@@ -3,7 +3,7 @@
         'name' => 'GDPR',
         'description' => 'GDPR, Cookies...',
         'settings' => [
-            'cookies_settings_title' => 'Cookies',
+            'cookies_settings_title' => 'Nastavení Cookies',
             'cookies_settings_description' => 'Správa a konfigurace souborů cookie, lišty souborů cookie a jejich nastavení.',
             'cookies_text_title' => 'GDPR',
             'cookies_text_content' => 'Správa obecného nařízení o ochraně údajů'

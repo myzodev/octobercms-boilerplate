@@ -3,7 +3,7 @@
         'name' => 'GDPR',
         'description' => 'GDPR, Cookies...',
         'settings' => [
-            'cookies_settings_title' => 'Cookies',
+            'cookies_settings_title' => 'Cookies Settings',
             'cookies_settings_description' => 'Manage and configure cookies, cookies bar and its settings.',
             'cookies_text_title' => 'GDPR',
             'cookies_text_content' => 'Manage General Data Protection Regulation'
