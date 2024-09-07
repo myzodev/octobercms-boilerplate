@@ -1,73 +1,65 @@
-<p align="center">
-    <img src="https://github.com/octobercms/october/blob/develop/themes/demo/assets/images/october.png?raw=true" alt="October" width="25%" height="25%" />
-</p>
+# OctoberCMS Boilerplate
 
-[October](https://octobercms.com) is a Content Management System (CMS) and web platform whose sole purpose is to make your development workflow simple again. It was born out of frustration with existing systems. We feel building websites has become a convoluted and confusing process that leaves developers unsatisfied. We want to turn you around to the simpler side and get back to basics.
+This repository provides a **boilerplate** for building projects with **OctoberCMS**. It is pre-configured with a modern frontend workflow, including **TailwindCSS**, **Alpine.js**, and a basic **JavaScript** and **SASS** folder structure. The goal is to streamline development by offering a ready-to-use setup, saving time on initial configuration.
 
-October's mission is to show the world that web development is not rocket science.
-
-[![Build Status](https://github.com/octobercms/library/actions/workflows/tests.yml/badge.svg)](https://octobercms.com/)
-[![Downloads](https://img.shields.io/packagist/dt/october/rain)](https://docs.octobercms.com/)
-[![Version](https://img.shields.io/packagist/v/october/october)](https://octobercms.com/changelog)
-[![License](https://poser.pugx.org/october/october/license.svg)](./LICENSE.md)
+[October](https://octobercms.com) is a Content Management System (CMS) and web platform whose sole purpose is to make your development workflow simple again. It was born out of frustration with existing systems.
 
 > *Please note*: October is open source but it is not free software. A license with a small fee is required for each website you build with October CMS.
 
-## Installing October
+## Features
 
-Instructions on how to install October can be found at the [installation guide](https://docs.octobercms.com/3.x/setup/installation.html).
+- **OctoberCMS**: A Laravel-based CMS framework for building modern websites and applications.
+- **Basic JavaScript & SASS structure**: Organized folder structure for custom frontend development.
+- **TailwindCSS**: A utility-first CSS framework for rapid UI development.
+- **Alpine.js**: A minimal, declarative JavaScript framework for adding interactivity.
+- **Prettier**: A code formatter to ensure consistent code styling across the project.
+- **ESLint**: A linter to help identify and fix potential JavaScript issues and enforce coding standards.
+- **Vite**: A fast and optimized build tool for modern web projects.
 
-### Quick Start Installation
+### Plugins & Custom Features
 
-If you have composer installed, run this in your terminal to install October CMS from command line. This will place the files in a directory named **myoctober**.
+- **Builder Plugin**: [Builder](https://github.com/rainlab/builder-plugin) is a visual development tool. It shortens plugin development time by automating common development tasks and makes programming fun again. With Builder you can create a fully functional plugin scaffold in a matter of minutes.
+- **Custom WebP Plugin**: Automatically converts images uploaded via the Media Finder into WebP format for improved performance and reduced file sizes.
+- **Frontend Settings Plugin**: A custom plugin for easily managing common frontend elements e.g. Logo, Favicon, Social media links...
+- **Simple Cookies & GDPR Plugin**: A plugin to handle cookie consent and GDPR compliance, offering a customizable cookie banner for your site.
 
-    composer create-project october/october myoctober
+## Installation
 
-If you plan on using a database, run this command inside the application directory.
+Clone the repository:
+```bash
+git clone https://github.com/myzo1/octobercms-boilerplate.git
+```
+Navigate to the project directory:
+```bash
+cd octobercms-boilerplate
+```
+Install dependencies:
+```bash
+composer install
+php artisan october:install
+```
 
-    php artisan october:install
+## Building assets
 
-## Learning October
+To build assets run these commands in `theme/{your-theme-name}` folder
 
-The best place to learn October CMS is by [reading the documentation](https://docs.octobercms.com) or [following some tutorials](https://octobercms.com/support/articles/tutorials).
+```bash
+npm install
+npm run dev
+```
 
-You may also watch this [introductory video](https://www.youtube.com/watch?v=yLZTOeOS7wI). Make sure to check out our [official YouTube channel](https://www.youtube.com/c/OctoberCMSOfficial). There is also the excellent video series by [Watch & Learn](https://watch-learn.com/series/making-websites-with-october-cms).
+<br>
 
-For code examples of building with October CMS, visit the [RainLab Plugin Suite](https://github.com/rainlab) or the [October Demos Repo](https://github.com/octoberdemos).
+To include the _Vite Dev Server_ assets in your dev environment, set the `APP_ENV` variable in your `.env` file to either `local` or `dev`. Once set, the _Vite Dev Server_ will automatically be included.
+For more detailed information, refer to the [OctoberCMS Vite Plugin](https://github.com/OFFLINE-GmbH/oc-vite-plugin).
 
-## Coding Standards
+```env
+APP_ENV: local # or dev
+```
 
-Please follow the following guides and code standards:
+<br>
 
-* [PSR 4 Coding Standards](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md)
-* [PSR 2 Coding Style Guide](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)
-* [PSR 1 Coding Standards](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md)
-
-## Security Vulnerabilities
-
-Please review [our security policy](https://github.com/octobercms/october/security/policy) on how to report security vulnerabilities.
-
-## Development Team
-
-October CMS was created by [Alexey Bobkov](https://www.linkedin.com/in/alexey-bobkov-232ba02b/) and [Samuel Georges](https://www.linkedin.com/in/samuel-georges-0a964131/), who both continue to develop the platform.
-
-## Foundation library
-
-The CMS uses [Laravel](https://laravel.com) as a foundation PHP framework.
-
-## Contact
-
-For announcements and updates:
-
-* [Contact Us Page](http://octoberdev.test/contact)
-* [Follow us on Twitter](https://twitter.com/octobercms)
-* [Like us on Facebook](https://facebook.com/octobercms)
-
-To chat or hang out:
-
-* [Join us on Slack](https://octobercms.slack.com)
-* [Join us on Discord](https://discord.gg/gEKgwSZ)
-* [Join us on Telegram](https://t.me/octoberchat)
+***Do not forget to set `APP_ENV` to `production` when done with development.***
 
 ## License
 
