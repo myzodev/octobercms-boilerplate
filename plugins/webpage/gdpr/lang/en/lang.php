@@ -32,6 +32,7 @@
     'scripts_comment' => 'Here, you can define which scripts should be run if the cookie is accepted.',
     'script_title' => 'Title (optional)',
     'script_code' => 'Code',
+    'cookie_slug' => 'Code',
     'settings' => [
         'cookies_expiration_days' => 'Expiration Days',
         'cookies_expiration_days_comment' => 'Defines how long should cookies last in users browser.',

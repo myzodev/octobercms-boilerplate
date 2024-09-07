@@ -9,17 +9,17 @@
 		&-bottom {
 			@apply pb-120 xl:pb-160;
 		}
-	}
 
-	.section-offset-small {
-		@apply py-88 xl:py-120;
+		&-small {
+			@apply py-88 xl:py-120;
 
-		&-top {
-			@apply pt-88 xl:pt-120;
-		}
+			&-top {
+				@apply pt-88 xl:pt-120;
+			}
 
-		&-bottom {
-			@apply pb-88 xl:pb-120;
+			&-bottom {
+				@apply pb-88 xl:pb-120;
+			}
 		}
 	}
 }

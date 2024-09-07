@@ -1,0 +1,44 @@
+$background: #fffbfc;
+
+$primary: (
+	'50': #fce6eb,
+	'75': #f296ac,
+	'100': #ec6b8a,
+	'200': #e42b57,
+	'300': #df0035,
+	'400': #9c0025,
+	'500': #880020,
+);
+
+$neutral: (
+	'10': #fbfbfb,
+	'20': #f6f6f6,
+	'30': #ededed,
+	'40': #e2e2e3,
+	'50': #c7c7c8,
+	'60': #b9b9bb,
+	'70': #aeaeb0,
+	'80': #a1a1a3,
+	'90': #939396,
+	'100': #868689,
+	'200': #78787c,
+	'300': #6b6b6e,
+	'400': #5f5f64,
+	'500': #525256,
+	'600': #47474b,
+	'700': #37373c,
+	'800': #29292f,
+	'900': #1e1e24,
+);
+
+:root {
+	--background: #{$background};
+
+	@each $key, $value in $primary {
+		--primary-#{$key}: #{$value};
+	}
+
+	@each $key, $value in $neutral {
+		--neutral-#{$key}: #{$value};
+	}
+}
