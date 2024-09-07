@@ -14,5 +14,14 @@
 
 <link rel="icon" href="{{ settings.favicon|media }}" />
 
-{% partial 'layout/fonts' %} {{ vite([ 'src/sass/app.scss' ]) }} {% styles %} {{ vite([ 'src/js/app.js' ]) }} {% scripts
-%} {% framework %}
+{% partial 'layout/fonts' %} 
+
+{{ vite([ 'src/sass/app.scss' ]) }} 
+
+{% styles %} 
+
+{{ vite([ 'src/js/app.js' ]) }} 
+
+{% scripts %} 
+
+{% framework extras %}

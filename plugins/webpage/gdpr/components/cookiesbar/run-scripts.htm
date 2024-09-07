@@ -1,12 +1,8 @@
-{% if settings.cookies|length %}
-    {% for cookie in settings.cookies %}
+{% if acceptedCookies|length %}
+    {% for cookie in acceptedCookies %}
         {% for script in cookie.scripts %}
-            {% if cookie.is_required or cookies[cookie.cookie_slug] %}
-                {% if script.script_code %}
-                    {% put scripts %}
-                        {{ script.script_code|raw }}
-                    {% endput %}
-                {% endif %}
+            {% if script.script_code %}
+                {{ script.script_code|raw }}
             {% endif %}
         {% endfor %}
     {% endfor %}

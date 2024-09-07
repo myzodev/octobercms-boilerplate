@@ -33,17 +33,13 @@
     'script_title' => 'Titel (optional)',
     'script_code' => 'Code',
     'cookie_slug' => 'Code',
-    'components' => [
-        'cookie_bar_name' => 'Cookie-Leiste',
-        'cookie_bar_description' => 'Zeigt die Cookie-Leiste auf der Webseite an.',
-    ],
     'settings' => [
         'cookies_expiration_days' => 'Ablaufdauer der Cookies in Tagen',
         'cookies_expiration_days_comment' => 'Legt fest, wie lange Cookies im Browser des Benutzers gespeichert werden.',
         'cookie_bar_mode' => 'Modus der Cookie-Leiste',
         'cookie_bar_mode_comment' => 'Ändert den Anzeigemodus der Cookie-Leiste.',
         'cookie_bar_mode_expanded' => 'Erweitert',
-        'cookie_bar_mode_collapsed' => 'Eingeklappt',
+        'cookie_bar_mode_simple' => 'Einfach',
         'cookies_disable' => 'Cookies deaktivieren',
         'cookies_disable_comment' => 'Deaktivieren Sie dieses Plugin vollständig.',
         'cookies_disable_warning' => 'Cookies sind deaktiviert',

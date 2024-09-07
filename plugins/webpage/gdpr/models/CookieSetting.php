@@ -18,17 +18,12 @@ class CookieSetting extends SettingModel
         'cookie_bar_description' => 'required'
     ];
 
-    static function getCookies($cookiesPrefix = 'cookies'): array
+    static function getCookies(bool $requiredOnly = false): array
     {
         $cookies = [];
 
         foreach (CookieSetting::get('cookies', []) as $cookie) {
-            if (!empty($cookie['is_enabled']) and empty($_COOKIE[($cookiesPrefix . '-consent')])) {
-                $cookies[$cookie['cookie_slug']] = 1;
-                continue;
-            }
-
-            if (!empty($_COOKIE[($cookiesPrefix . '-' . $cookie['cookie_slug'])])) {
+            if (!$requiredOnly || $cookie['is_required']) {
                 $cookies[$cookie['cookie_slug']] = 1;
             }
         }
@@ -36,21 +31,43 @@ class CookieSetting extends SettingModel
         return $cookies;
     }
 
-    static function getRequiredCookies(): array
+    static function getAcceptedCookies(): array
     {
-        $requiredCookies = [];
+        $cookies = [];
+        $instanceCookies = self::instance()->cookies;
 
-        foreach (CookieSetting::get('cookies', []) as $cookie) {
-            if ($cookie['is_required']) {
-                $requiredCookies[$cookie['cookie_slug']] = 1;
+        foreach ($_COOKIE as $key => $value) {
+            // Check if the cookie key starts with 'cookies-'
+            if (strpos($key, 'cookies-') !== 0) {
+                continue;
+            }
+
+            $cookieSlug = substr($key, 8); // Get the slug part of the cookie key
+
+            // Find the matching cookie in the instance cookies array
+            foreach ($instanceCookies as $cookie) {
+                if ($cookie['cookie_slug'] === $cookieSlug) {
+                    $cookies[$key] = $cookie;
+                    break;
+                }
             }
         }
 
-        return $requiredCookies;
+        return $cookies;
     }
 
-    static function getCookiesConsent($cookiesPrefix = 'cookies'): string
+    static function getCookiesConsent(): bool
     {
-        return !empty($_COOKIE[($cookiesPrefix . '-consent')]);;
+        foreach (CookieSetting::get('cookies', []) as $cookie) {
+            $currentCookieSlug = 'cookies-' . $cookie['cookie_slug'];
+            $currentCookiesIsRequired = $cookie['is_required'];
+
+            // Check if the required cookie is missing
+            if ($currentCookiesIsRequired && empty($_COOKIE[$currentCookieSlug])) {
+                return false; // Consent not given if a required cookie is missing
+            }
+        }
+
+        return true;
     }
 }

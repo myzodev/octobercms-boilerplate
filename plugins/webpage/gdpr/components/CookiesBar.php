@@ -1,23 +1,20 @@
 <?php namespace Webpage\GDPR\Components;
 
 use Carbon\Carbon;
-use Cms\Classes\Theme;
 use Webpage\GDPR\Models\CookieSetting;
 use Webpage\Helpers\Classes\Helpers\BaseComponent;
 
 class CookiesBar extends BaseComponent
 {
     public $settings;
-    public $cookies;
-    public $requiredCookies;
     public $cookiesConsent;
+    public $acceptedCookies;
 
     public function init(): void
     {
         $this->setVariable('settings', CookieSetting::instance()->value);
-        $this->setVariable('cookies', CookieSetting::getCookies());
-        $this->setVariable('requiredCookies', CookieSetting::getRequiredCookies());
         $this->setVariable('cookiesConsent', CookieSetting::getCookiesConsent());
+        $this->setVariable('acceptedCookies', CookieSetting::getAcceptedCookies());
     }
 
     public function onRun(): void
@@ -29,26 +26,49 @@ class CookiesBar extends BaseComponent
     public function componentDetails(): array
     {
         return [
-            'name' => 'webpage.gdpr::lang.components.cookie_bar_name',
-            'description' => 'webpage.gdpr::lang.components.cookie_bar_description'
+            'name' => 'Cookies Bar',
+            'description' => 'Display cookies bar.'
         ];
     }
 
     protected function onConsent(): void
     {
-        $cookies = post() ? post() : $this->requiredCookies;
+        $cookies = post(); // Accepted cookies from user
+        $consent = $cookies['consent'];
+
+        array_pop($cookies); // Remove consent (array_pop since consent is always last)
+
+        // Allow all cookies
+        if($consent === 'allow-all') {
+            $cookies = CookieSetting::getCookies();
+        }
+
+        // Allow only required cookies
+        if($consent === 'deny-all') {
+            $cookies = CookieSetting::getCookies(true);
+        }
+
+        // Allow selection and check if any cookies have been accepted
+        // if not set to required cookies
+        if($consent === 'allow-selection' && (empty($cookies) || count($cookies) < 1)) {
+            $cookies = CookieSetting::getCookies(true);
+        }
+
+        $this->setCookies($cookies);
+    }
+    
+    protected function setCookies($cookies = []): void
+    {
+        $path = '/';
+        $domain = $_SERVER['SERVER_NAME'];
         $expires = Carbon::now()->addDays($this->settings['cookies_expiration_days'])->timestamp;
 
-        if (!$this->cookiesConsent && !empty($this->requiredCookies)) {
-            $this->setCookies($cookies, $expires);
-        }
-    }
-
-    private function setCookies($cookies, $expires): void {
-        setcookie('cookies-consent', 1, $expires);
-
         foreach ($cookies as $cookie => $value) {
-            setcookie("cookies-{$cookie}", $value, $expires);
+            $sanitizedValue = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+            
+            if (!setcookie("cookies-{$cookie}", $sanitizedValue, $expires, $path, $domain, true, true)) {
+                error_log("Failed to set cookie: cookies-{$cookie}");
+            }
         }
     }
 }

@@ -164,6 +164,7 @@ tabs:
             label: 'webpage.gdpr::lang.settings.cookie_bar_mode'
             options:
                 expanded: 'webpage.gdpr::lang.settings.cookie_bar_mode_expanded'
+                simple: 'webpage.gdpr::lang.settings.cookie_bar_mode_simple'
             showSearch: 0
             span: right
             type: dropdown
