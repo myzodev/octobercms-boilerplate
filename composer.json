@@ -10,7 +10,6 @@
         "laravel/framework": "^9.0",
         "october/all": "^3.4",
         "rainlab/builder-plugin": "^2.0",
-        "rainlab/sitemap-plugin": "^1.2",
         "offline/oc-vite-plugin": "^2.0"
     },
     "require-dev": {
