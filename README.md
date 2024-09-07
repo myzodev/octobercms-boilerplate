@@ -27,7 +27,7 @@ This repository provides a **boilerplate** for building projects with **OctoberC
 
 Clone the repository:
 ```bash
-git clone https://github.com/myzo1/octobercms-boilerplate.git
+git clone https://github.com/myzo-dev/octobercms-boilerplate.git
 ```
 Navigate to the project directory:
 ```bash
