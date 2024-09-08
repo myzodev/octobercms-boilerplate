@@ -10,6 +10,8 @@
 <meta name="twitter:description" content="{{ this.page.meta_description }}" />
 <meta property="og:description" content="{{ this.page.meta_description }}" />
 
+{% meta %}
+
 <title>{{ this.page.meta_title }}</title>
 
 <link rel="icon" href="{{ settings.favicon|media }}" />
@@ -21,7 +23,5 @@
 {% styles %} 
 
 {{ vite([ 'src/js/app.js' ]) }} 
-
-{% scripts %} 
 
 {% framework extras %}

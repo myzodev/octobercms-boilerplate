@@ -11,5 +11,7 @@
         </form>
     {% endif %}
     
-    {% ajaxPartial '@run-scripts' %}
+    {% put scripts %}
+        {% ajaxPartial '@run-scripts' %}
+    {% endput %}
 {% endif %}
