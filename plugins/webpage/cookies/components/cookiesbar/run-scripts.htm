@@ -1,5 +1,3 @@
-<p>{{ acceptedCookies|length }}</p>
-
 {% if acceptedCookies|length %}
     {% for cookie in acceptedCookies %}
         {% for script in cookie.scripts %}
