@@ -86,7 +86,7 @@ class CookieSetting extends SettingModel
             }
         }
 
-        foreach ($_COOKIE as $cookie => $cookieValue) {
+        foreach ($_COOKIE as $cookie => $value) {
             if (strpos($cookie, self::COOKIE_PREFIX) === 0) {
                 return true;
             }
@@ -102,7 +102,7 @@ class CookieSetting extends SettingModel
         $expires = Carbon::now()->addDays(CookieSetting::get('cookies_expiration_days'))->timestamp;
 
         foreach ($cookies as $cookie) {
-            $cookieName = "cookies-{$cookie['cookie_slug']}";
+            $cookieName = self::COOKIE_PREFIX . $cookie['cookie_slug'];
             setcookie($cookieName, 'on', $expires, $path, $domain, true, true);
         }
     }
