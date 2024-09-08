@@ -19,11 +19,13 @@ class CookieSetting extends SettingModel
         'cookie_bar_description' => 'required'
     ];
 
+    const COOKIE_PREFIX = 'cookies-';
+
     public static function getCookies(): array
     {
         $cookies = [];
 
-        foreach (CookieSetting::get('cookies') as $cookie) {
+        foreach (self::get('cookies') as $cookie) {
             $cookies[$cookie['cookie_slug']] = $cookie;
         }
 
@@ -32,70 +34,61 @@ class CookieSetting extends SettingModel
 
     public static function getRequiredCookies(): array
     {
-        $cookies = [];
+        $requiredCookies = [];
 
-        foreach (CookieSetting::get('cookies') as $cookie) {
+        foreach (self::getCookies() as $cookie) {
             if ($cookie['is_required']) {
-                $cookies[$cookie['cookie_slug']] = $cookie;
+                $requiredCookies[$cookie['cookie_slug']] = $cookie;
             }
         }
 
-        return $cookies;
+        return $requiredCookies;
     }
 
     public static function getSelectedCookies($selectedCookies): array
     {
-        $cookies = [];
-        $instanceCookies = CookieSetting::get('cookies');
+        $cookies = self::getCookies();
+        $matchingCookies = [];
 
         foreach ($selectedCookies as $selectedCookie => $value) {
-            foreach ($instanceCookies as $instanceCookie) {
-                if ($instanceCookie['cookie_slug'] === $selectedCookie) {
-                    $cookies[$selectedCookie] = $instanceCookie;
-                }
+            if (isset($cookies[$selectedCookie])) {
+                $matchingCookies[$selectedCookie] = $cookies[$selectedCookie];
             }
         }
 
-        return $cookies;
+        return $matchingCookies;
     }
 
-     public static function getAcceptedCookies(): array
+    public static function getAcceptedCookies(): array
     {
-        $cookies = [];
+        $acceptedCookies = [];
 
         foreach ($_COOKIE as $cookie => $value) {
-            // Check if the cookie key starts with 'cookies-'
-            if (strpos($cookie, 'cookies-') !== 0) {
-                continue;
-            }
+            if (strpos($cookie, self::COOKIE_PREFIX) === 0) {
+                $cookieSlug = substr($cookie, strlen(self::COOKIE_PREFIX));
 
-            $cookieSlug = substr($cookie, 8); // Get the slug part of the cookie key
-
-            foreach (CookieSetting::get('cookies') as $cookie) {
-                if($cookie['cookie_slug'] === $cookieSlug) {
-                    $cookies[$cookie['cookie_slug']] = $cookie;
+                if (isset(self::getCookies()[$cookieSlug])) {
+                    $acceptedCookies[$cookieSlug] = self::getCookies()[$cookieSlug];
                 }
             }
         }
 
-        return $cookies;
+        return $acceptedCookies;
     }
 
     public static function getCookiesConsent(): bool
     {
-        foreach (CookieSetting::get('cookies', []) as $cookie) {
-            $currentCookieSlug = 'cookies-' . $cookie['cookie_slug'];
-            $currentCookiesIsRequired = $cookie['is_required'];
+        foreach (self::getCookies() as $cookie) {
+            $cookieKey = self::COOKIE_PREFIX . $cookie['cookie_slug'];
 
-            // Check if any required cookie is missing
-            if ($currentCookiesIsRequired && empty($_COOKIE[$currentCookieSlug])) {
-                return false; // Consent not given if a required cookie is missing
+            if ($cookie['is_required'] && empty($_COOKIE[$cookieKey])) {
+                return false;
             }
         }
 
         foreach ($_COOKIE as $cookie => $cookieValue) {
-            if (strpos($cookie, 'cookies-') === 0) {
-                return true; // At least one cookie starts with the prefix
+            if (strpos($cookie, self::COOKIE_PREFIX) === 0) {
+                return true;
             }
         }
 
