@@ -1,7 +1,7 @@
 {% if not settings.disable_cookies %}
     {% set show = true %}
 
-    {% if cookiesConsent is defined and cookiesConsent is not empty %}
+    {% if cookiesConsent %}
         {% set show = false %}
     {% endif %}
 
@@ -11,5 +11,5 @@
         </form>
     {% endif %}
     
-    {% partial '@run-scripts' %}
+    {% ajaxPartial '@run-scripts' %}
 {% endif %}
