@@ -13,6 +13,7 @@ This repository provides a **boilerplate** for building projects with **OctoberC
 - **TailwindCSS**: A utility-first CSS framework for rapid UI development.
 - **Alpine.js**: A minimal, declarative JavaScript framework for adding interactivity.
 - **ESLint**: A linter to help identify and fix potential JavaScript issues and enforce coding standards.
+- **Prettier**: A code formatter to ensure consistent code styling across the project.
 - **Vite**: A fast and optimized build tool for modern web projects.
 
 ### Plugins & Custom Features

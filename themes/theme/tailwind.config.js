@@ -22,17 +22,17 @@ module.exports = {
 		},
 
 		screens: {
-            sm: '580px',
-            md: '768px',
-            lg: '1024px',
-            xl: '1280px',
-            '2xl': '1536px',
-        },
+			sm: '580px',
+			md: '768px',
+			lg: '1024px',
+			xl: '1280px',
+			'2xl': '1536px',
+		},
 
-        container: {
-            center: true,
-            padding: '1.5rem',
-        },
+		container: {
+			center: true,
+			padding: '1.5rem',
+		},
 
 		fontFamily: {
 			heading: ['Lato', 'sans-serif'],
@@ -122,38 +122,38 @@ module.exports = {
 
 		colors: {
 			transparent: 'transparent',
-            background: 'var(--background)',
+			background: 'var(--background)',
 
 			primary: {
-                50: 'var(--primary-50)',
-                75: 'var(--primary-75)',
-                100: 'var(--primary-100)',
-                200: 'var(--primary-200)',
-                300: 'var(--primary-300)',
-                400: 'var(--primary-400)',
-                500: 'var(--primary-500)',
-            },
+				50: 'var(--primary-50)',
+				75: 'var(--primary-75)',
+				100: 'var(--primary-100)',
+				200: 'var(--primary-200)',
+				300: 'var(--primary-300)',
+				400: 'var(--primary-400)',
+				500: 'var(--primary-500)',
+			},
 
-            neutral: {
-                10: 'var(--neutral-10)',
-                20: 'var(--neutral-20)',
-                30: 'var(--neutral-30)',
-                40: 'var(--neutral-40)',
-                50: 'var(--neutral-50)',
-                60: 'var(--neutral-60)',
-                70: 'var(--neutral-70)',
-                80: 'var(--neutral-80)',
-                90: 'var(--neutral-90)',
-                100: 'var(--neutral-100)',
-                200: 'var(--neutral-200)',
-                300: 'var(--neutral-300)',
-                400: 'var(--neutral-400)',
-                500: 'var(--neutral-500)',
-                600: 'var(--neutral-600)',
-                700: 'var(--neutral-700)',
-                800: 'var(--neutral-800)',
-                900: 'var(--neutral-900)',
-            },
+			neutral: {
+				10: 'var(--neutral-10)',
+				20: 'var(--neutral-20)',
+				30: 'var(--neutral-30)',
+				40: 'var(--neutral-40)',
+				50: 'var(--neutral-50)',
+				60: 'var(--neutral-60)',
+				70: 'var(--neutral-70)',
+				80: 'var(--neutral-80)',
+				90: 'var(--neutral-90)',
+				100: 'var(--neutral-100)',
+				200: 'var(--neutral-200)',
+				300: 'var(--neutral-300)',
+				400: 'var(--neutral-400)',
+				500: 'var(--neutral-500)',
+				600: 'var(--neutral-600)',
+				700: 'var(--neutral-700)',
+				800: 'var(--neutral-800)',
+				900: 'var(--neutral-900)',
+			},
 		},
 	},
 
@@ -222,17 +222,17 @@ module.exports = {
 					},
 				},
 
-                '.display': {
-                    fontSize: '3rem',
-                    fontFamily: theme('fontFamily.heading'),
-                    lineHeight: '115%',
-                    [`@media (min-width: ${theme('screens.md')})`]: {
-                        fontSize: '4.2rem',
-                    },
-                    [`@media (min-width: ${theme('screens.lg')})`]: {
-                        fontSize: '5.6rem',
-                    },
-                },
+				'.display': {
+					fontSize: '3rem',
+					fontFamily: theme('fontFamily.heading'),
+					lineHeight: '115%',
+					[`@media (min-width: ${theme('screens.md')})`]: {
+						fontSize: '4.2rem',
+					},
+					[`@media (min-width: ${theme('screens.lg')})`]: {
+						fontSize: '5.6rem',
+					},
+				},
 			})
 		}),
 	],
