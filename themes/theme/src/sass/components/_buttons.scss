@@ -1,0 +1,19 @@
+@layer components {
+    .button {
+        @apply px-24 py-[12px] font-semibold rounded-full;
+
+        &-sm {
+            @extend .button;
+            @apply px-[20px] py-10;
+        }
+
+        &-xs {
+            @extend .button;
+            @apply px-16 py-8;
+        }
+
+        &-primary {
+            @apply text-neutral-10 bg-primary-300;
+        }
+    }
+}

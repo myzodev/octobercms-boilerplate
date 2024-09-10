@@ -13,6 +13,7 @@ module.exports = {
 	theme: {
 		extend: {
 			zIndex: {
+                0: 0,
 				60: '60',
 				70: '70',
 				80: '80',
