@@ -1,6 +1,8 @@
-const plugin = require('tailwindcss/plugin')
+import plugin from 'tailwindcss/plugin'
+import aspectRatio from '@tailwindcss/aspect-ratio'
+import type { Config } from 'tailwindcss'
 
-module.exports = {
+export default {
 	content: [
 		'./layouts/**/*.htm',
 		'./pages/**/*.htm',
@@ -13,12 +15,12 @@ module.exports = {
 	theme: {
 		extend: {
 			zIndex: {
-                0: 0,
-				60: '60',
-				70: '70',
-				80: '80',
-				90: '90',
-				100: '100',
+				'0': '0',
+				'60': '60',
+				'70': '70',
+				'80': '80',
+				'90': '90',
+				'100': '100',
 			},
 		},
 
@@ -50,7 +52,7 @@ module.exports = {
 		spacing: {
 			unset: 'unset',
 			none: 'none',
-			0: 0,
+			'0': '0',
 			1: '0.063rem',
 			2: '0.125rem',
 			3: '0.188rem',
@@ -108,7 +110,7 @@ module.exports = {
 		},
 
 		borderRadius: {
-			0: 0,
+			'0': '0',
 			4: '4px',
 			8: '8px',
 			16: '16px',
@@ -159,7 +161,7 @@ module.exports = {
 	},
 
 	plugins: [
-		require('@tailwindcss/aspect-ratio'),
+		aspectRatio,
 
 		plugin(function ({ addComponents, theme }) {
 			addComponents({
@@ -237,4 +239,4 @@ module.exports = {
 			})
 		}),
 	],
-}
+} satisfies Config

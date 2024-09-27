@@ -1,15 +1,14 @@
-import { defineConfig } from 'vite'
 import { resolve } from 'path'
-import eslint from 'vite-plugin-eslint'
+import type { UserConfig } from 'vite'
 
 const input = {
-	js: resolve(__dirname, 'src/js/app.js'),
+	js: resolve(__dirname, 'src/js/app.ts'),
 	css: resolve(__dirname, 'src/sass/app.scss'),
 }
 
 const themeName = 'theme'
 
-export default defineConfig({
+export default {
 	base: `/themes/${themeName}/assets/build/`,
 	build: {
 		rollupOptions: { input },
@@ -22,5 +21,4 @@ export default defineConfig({
 			protocol: 'ws',
 		},
 	},
-	plugins: [eslint()],
-})
+} satisfies UserConfig

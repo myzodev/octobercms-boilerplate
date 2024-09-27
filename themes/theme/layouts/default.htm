@@ -21,6 +21,10 @@ function onStart()
 	</head>
 	<body>
         {% component 'cookiesBar' %}
+
+        {% flash %}
+            <p class="alert alert-{{ type }}" data-interval="20">{{ message }}</p>
+        {% endflash %}
     
         <header>
             {% partial 'layout/navbar' %}
