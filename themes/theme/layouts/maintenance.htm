@@ -1,15 +1,5 @@
 description = "Maintenance layout"
 ==
-<?php
-function onInit()
-{
-    $themePath = 'themes/' . $this->theme->getDirName() . '/assets';
-    $this->layout['styles'] = url(mix('css/app.css', $themePath));
-    $this->layout['scripts'] = url(mix('js/app.js', $themePath));
-}
-?>
-==
-
 <!DOCTYPE html>
 <html lang="{{ this.site.locale|default('en') }}">
 	<head>
