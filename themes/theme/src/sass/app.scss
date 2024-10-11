@@ -2,16 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import './abstract/variables';
-@import './abstract/functions';
-
-@import './base/base';
-@import './base/typography';
-
-@import './components/inputs';
-@import './components/buttons';
-
-@import './utilities/classes';
-@import './utilities/grid';
-
+@import './abstract/index';
+@import './base/index';
+@import './components/index';
+@import './utilities/index';
 @import './shame';
