@@ -1,44 +1,32 @@
-$background: #fffbfc;
+$background: theme('colors.background');
 
 $primary: (
-	'50': #fce6eb,
-	'75': #f296ac,
-	'100': #ec6b8a,
-	'200': #e42b57,
-	'300': #df0035,
-	'400': #9c0025,
-	'500': #880020,
+	'50': theme('colors.primary.50'),
+	'75': theme('colors.primary.75'),
+	'100': theme('colors.primary.100'),
+	'200': theme('colors.primary.200'),
+	'300': theme('colors.primary.300'),
+	'400': theme('colors.primary.400'),
+	'500': theme('colors.primary.500'),
 );
 
 $neutral: (
-	'10': #fbfbfb,
-	'20': #f6f6f6,
-	'30': #ededed,
-	'40': #e2e2e3,
-	'50': #c7c7c8,
-	'60': #b9b9bb,
-	'70': #aeaeb0,
-	'80': #a1a1a3,
-	'90': #939396,
-	'100': #868689,
-	'200': #78787c,
-	'300': #6b6b6e,
-	'400': #5f5f64,
-	'500': #525256,
-	'600': #47474b,
-	'700': #37373c,
-	'800': #29292f,
-	'900': #1e1e24,
+	'10': theme('colors.neutral.10'),
+	'20': theme('colors.neutral.20'),
+	'30': theme('colors.neutral.30'),
+	'40': theme('colors.neutral.40'),
+	'50': theme('colors.neutral.50'),
+	'60': theme('colors.neutral.60'),
+	'70': theme('colors.neutral.70'),
+	'80': theme('colors.neutral.80'),
+	'90': theme('colors.neutral.90'),
+	'100': theme('colors.neutral.100'),
+	'200': theme('colors.neutral.200'),
+	'300': theme('colors.neutral.300'),
+	'400': theme('colors.neutral.400'),
+	'500': theme('colors.neutral.500'),
+	'600': theme('colors.neutral.600'),
+	'700': theme('colors.neutral.700'),
+	'800': theme('colors.neutral.800'),
+	'900': theme('colors.neutral.900'),
 );
-
-:root {
-	--background: #{$background};
-
-	@each $key, $value in $primary {
-		--primary-#{$key}: #{$value};
-	}
-
-	@each $key, $value in $neutral {
-		--neutral-#{$key}: #{$value};
-	}
-}

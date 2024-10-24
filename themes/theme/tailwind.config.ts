@@ -4,12 +4,9 @@ import type { Config } from 'tailwindcss'
 
 export default {
 	content: [
-		'./layouts/**/*.htm',
-		'./pages/**/*.htm',
-		'./partials/**/*.htm',
+		'./{layouts,pages,partials}/**/*.htm',
 		'./src/**/*.js',
-		'../../plugins/**/*.htm',
-		'../../plugins/**/*.js',
+		'../../plugins/**/*.{htm,js}',
 	],
 
 	theme: {
@@ -111,8 +108,11 @@ export default {
 
 		borderRadius: {
 			'0': '0',
+			2: '2px',
 			4: '4px',
+			6: '6px',
 			8: '8px',
+			10: '10px',
 			16: '16px',
 			24: '24px',
 			32: '32px',
@@ -125,37 +125,37 @@ export default {
 
 		colors: {
 			transparent: 'transparent',
-			background: 'var(--background)',
+			background: '#fffbfc',
 
 			primary: {
-				50: 'var(--primary-50)',
-				75: 'var(--primary-75)',
-				100: 'var(--primary-100)',
-				200: 'var(--primary-200)',
-				300: 'var(--primary-300)',
-				400: 'var(--primary-400)',
-				500: 'var(--primary-500)',
+				50: '#fce6eb',
+				75: '#f296ac',
+				100: '#ec6b8a',
+				200: '#e42b57',
+				300: '#df0035',
+				400: '#9c0025',
+				500: '#880020',
 			},
 
 			neutral: {
-				10: 'var(--neutral-10)',
-				20: 'var(--neutral-20)',
-				30: 'var(--neutral-30)',
-				40: 'var(--neutral-40)',
-				50: 'var(--neutral-50)',
-				60: 'var(--neutral-60)',
-				70: 'var(--neutral-70)',
-				80: 'var(--neutral-80)',
-				90: 'var(--neutral-90)',
-				100: 'var(--neutral-100)',
-				200: 'var(--neutral-200)',
-				300: 'var(--neutral-300)',
-				400: 'var(--neutral-400)',
-				500: 'var(--neutral-500)',
-				600: 'var(--neutral-600)',
-				700: 'var(--neutral-700)',
-				800: 'var(--neutral-800)',
-				900: 'var(--neutral-900)',
+				10: '#fbfbfb',
+				20: '#f6f6f6',
+				30: '#ededed',
+				40: '#e2e2e3',
+				50: '#c7c7c8',
+				60: '#b9b9bb',
+				70: '#aeaeb0',
+				80: '#a1a1a3',
+				90: '#939396',
+				100: '#868689',
+				200: '#78787c',
+				300: '#6b6b6e',
+				400: '#5f5f64',
+				500: '#525256',
+				600: '#47474b',
+				700: '#37373c',
+				800: '#29292f',
+				900: '#1e1e24',
 			},
 		},
 	},
@@ -165,6 +165,18 @@ export default {
 
 		plugin(function ({ addComponents, theme }) {
 			addComponents({
+				'.display': {
+					fontSize: '3rem',
+					fontFamily: theme('fontFamily.heading'),
+					lineHeight: '115%',
+					[`@media (min-width: ${theme('screens.md')})`]: {
+						fontSize: '4.2rem',
+					},
+					[`@media (min-width: ${theme('screens.lg')})`]: {
+						fontSize: '5.6rem',
+					},
+				},
+
 				'.h1': {
 					fontSize: '3rem',
 					fontFamily: theme('fontFamily.heading'),
@@ -222,18 +234,6 @@ export default {
 					lineHeight: '115%',
 					[`@media (min-width: ${theme('screens.md')})`]: {
 						fontSize: '1.19rem',
-					},
-				},
-
-				'.display': {
-					fontSize: '3rem',
-					fontFamily: theme('fontFamily.heading'),
-					lineHeight: '115%',
-					[`@media (min-width: ${theme('screens.md')})`]: {
-						fontSize: '4.2rem',
-					},
-					[`@media (min-width: ${theme('screens.lg')})`]: {
-						fontSize: '5.6rem',
 					},
 				},
 			})
