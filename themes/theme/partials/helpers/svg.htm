@@ -1,7 +1,12 @@
 ==
 <?php
+    use Cms\Classes\Theme;
+
     function onStart() {
-        $this['svgContents'] = File::get(base_path('themes/racetime/assets/'.$this->file));
+        $theme = Theme::getActiveTheme();
+        $themeName = $theme->getDirName();
+        
+        $this['svgContents'] = File::get(base_path("themes/{$themeName}/assets/{$this->file}"));
     }
 ?>
 ==
