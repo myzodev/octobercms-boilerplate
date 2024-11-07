@@ -25,8 +25,10 @@ class CookieSetting extends SettingModel
     {
         $cookies = [];
 
-        foreach (self::get('cookies') as $cookie) {
-            $cookies[$cookie['cookie_slug']] = $cookie;
+        if (self::get('cookies')) {
+            foreach (self::get('cookies') as $cookie) {
+                $cookies[$cookie['cookie_slug']] = $cookie;
+            }
         }
 
         return $cookies;

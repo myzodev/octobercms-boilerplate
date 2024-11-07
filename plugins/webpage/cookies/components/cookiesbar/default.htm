@@ -1,4 +1,4 @@
-{% if not settings.disable_cookies %}
+{% if not settings.disable_cookies and settings.cookies is not empty %}
     {% set show = true %}
 
     {% if cookiesConsent %}
