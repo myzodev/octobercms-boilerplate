@@ -1,9 +1,10 @@
+@forward './abstract/index';
+@forward './base/index';
+@forward './components/index';
+@forward './utilities/index';
+@forward './shame';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import './abstract/index';
-@import './base/index';
-@import './components/index';
-@import './utilities/index';
-@import './shame';

@@ -3,5 +3,5 @@
 //   Contains base styles for the entire project, such as 
 //   global element styles and typography.
 
-@import 'base';
-@import 'typography';
+@forward 'base';
+@forward 'typography';

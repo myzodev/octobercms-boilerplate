@@ -3,5 +3,5 @@
 //   Contains abstract elements like functions, variables, and mixins.
 //   This folder holds reusable logic that doesn't output any CSS directly.
 
-@import 'functions';
-@import 'variables';
+@forward 'functions';
+@forward 'variables';
