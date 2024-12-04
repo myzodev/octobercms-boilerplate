@@ -60,6 +60,7 @@ export default {
 			8: '0.5rem',
 			9: '0.563rem',
 			10: '0.625rem',
+			12: '0.75rem',
 			16: '1rem',
 			24: '1.5rem',
 			32: '2rem',
@@ -165,77 +166,95 @@ export default {
 
 		plugin(function ({ addComponents, theme }) {
 			addComponents({
-				'.display': {
-					fontSize: '3rem',
-					fontFamily: theme('fontFamily.heading'),
-					lineHeight: '115%',
-					[`@media (min-width: ${theme('screens.md')})`]: {
-						fontSize: '4.2rem',
-					},
-					[`@media (min-width: ${theme('screens.lg')})`]: {
-						fontSize: '5.6rem',
-					},
-				},
+                '.display': {
+                    fontSize: '3.64rem',
+                    fontFamily: theme('fontFamily.heading'),
+                    lineHeight: '115%',
+                    [`@media (min-width: ${theme('screens.md')})`]: {
+                        fontSize: '4.48rem',
+                    },
+                    [`@media (min-width: ${theme('screens.lg')})`]: {
+                        fontSize: '5.6rem',
+                    },
+                },
 
 				'.h1': {
-					fontSize: '3rem',
-					fontFamily: theme('fontFamily.heading'),
-					fontWeight: theme('fontWeight.bold'),
-					lineHeight: '115%',
-					[`@media (min-width: ${theme('screens.md')})`]: {
-						fontSize: '3.81rem',
-					},
-				},
+                    fontSize: '2.48rem',
+                    fontFamily: theme('fontFamily.heading'),
+                    fontWeight: theme('fontWeight.bold'),
+                    lineHeight: '115%',
+                    [`@media (min-width: ${theme('screens.md')})`]: {
+                        fontSize: '3.052rem',
+                    },
+                    [`@media (min-width: ${theme('screens.lg')})`]: {
+                        fontSize: '3.815rem',
+                    },
+                },
 
-				'.h2': {
-					fontSize: '2.5rem',
-					fontFamily: theme('fontFamily.heading'),
-					fontWeight: theme('fontWeight.bold'),
-					lineHeight: '115%',
-					[`@media (min-width: ${theme('screens.md')})`]: {
-						fontSize: '3rem',
-					},
-				},
+                '.h2': {
+                    fontSize: '1.984rem',
+                    fontFamily: theme('fontFamily.heading'),
+                    fontWeight: theme('fontWeight.bold'),
+                    lineHeight: '120%',
+                    [`@media (min-width: ${theme('screens.md')})`]: {
+                        fontSize: '2.441rem',
+                    },
+                    [`@media (min-width: ${theme('screens.lg')})`]: {
+                        fontSize: '3.052rem',
+                    },
+                },
 
-				'.h3': {
-					fontSize: '2.1rem',
-					fontFamily: theme('fontFamily.heading'),
-					fontWeight: theme('fontWeight.bold'),
-					lineHeight: '115%',
-					[`@media (min-width: ${theme('screens.md')})`]: {
-						fontSize: '2.44rem',
-					},
-				},
+                '.h3': {
+                    fontSize: '1.587rem',
+                    fontFamily: theme('fontFamily.heading'),
+                    fontWeight: theme('fontWeight.bold'),
+                    lineHeight: '125%',
+                    [`@media (min-width: ${theme('screens.md')})`]: {
+                        fontSize: '1.953rem',
+                    },
+                    [`@media (min-width: ${theme('screens.lg')})`]: {
+                        fontSize: '2.441rem',
+                    },
+                },
 
-				'.h4': {
-					fontSize: '1.75rem',
-					fontFamily: theme('fontFamily.heading'),
-					fontWeight: theme('fontWeight.bold'),
-					lineHeight: '115%',
-					[`@media (min-width: ${theme('screens.md')})`]: {
-						fontSize: '1.94rem',
-					},
-				},
+                '.h4': {
+                    fontSize: '1.27rem',
+                    fontFamily: theme('fontFamily.heading'),
+                    fontWeight: theme('fontWeight.bold'),
+                    lineHeight: '130%',
+                    [`@media (min-width: ${theme('screens.md')})`]: {
+                        fontSize: '1.562rem',
+                    },
+                    [`@media (min-width: ${theme('screens.lg')})`]: {
+                        fontSize: '1.953rem',
+                    },
+                },
 
-				'.h5': {
-					fontSize: '1.44rem',
-					fontFamily: theme('fontFamily.heading'),
-					fontWeight: theme('fontWeight.bold'),
-					lineHeight: '115%',
-					[`@media (min-width: ${theme('screens.md')})`]: {
-						fontSize: '1.56rem',
-					},
-				},
+                '.h5': {
+                    fontSize: '1.016rem',
+                    fontFamily: theme('fontFamily.heading'),
+                    fontWeight: theme('fontWeight.bold'),
+                    lineHeight: '135%',
+                    [`@media (min-width: ${theme('screens.md')})`]: {
+                        fontSize: '1.25rem',
+                    },
+                    [`@media (min-width: ${theme('screens.lg')})`]: {
+                        fontSize: '1.563rem',
+                    },
+                },
 
-				'.h6': {
-					fontSize: '1.25rem',
-					fontFamily: theme('fontFamily.heading'),
-					fontWeight: theme('fontWeight.bold'),
-					lineHeight: '115%',
-					[`@media (min-width: ${theme('screens.md')})`]: {
-						fontSize: '1.19rem',
-					},
-				},
+                '.h6': {
+                    fontSize: '0.812rem',
+                    fontFamily: theme('fontFamily.heading'),
+                    fontWeight: theme('fontWeight.bold'),
+                    lineHeight: '140%',
+                    [`@media (min-width: ${theme('screens.md')})`]: {
+                        fontSize: '1rem',
+                    },
+                    [`@media (min-width: ${theme('screens.lg')})`]: {
+                        fontSize: '1.25rem',
+                    },
+                },
 			})
 		}),
 	],
