@@ -1,6 +1,6 @@
 <?php return [
     'plugin' => [
         'name' => 'Helpers',
-        'description' => 'Backend helpers.'
+        'description' => 'OctoberCMS Helpers'
     ]
 ];
