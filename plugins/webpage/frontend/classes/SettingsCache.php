@@ -4,7 +4,7 @@ use Site, Cache;
 use Webpage\Frontend\Models\Setting;
 
 class SettingsCache {
-    private const CACHED_SETTINGS_NAME = 'frontend_settings';
+    private const CACHE_SETTINGS_PREFIX = 'frontend_settings_site_';
 
     public static function getSettingsCache(): ?Setting {
         [$cacheName, $siteId] = self::generateSiteCacheInfo();
@@ -25,7 +25,7 @@ class SettingsCache {
 
     private static function generateSiteCacheInfo(): array {
         $siteId = Site::getSiteFromContext()->id;
-        $cacheName = self::CACHED_SETTINGS_NAME . '_' . $siteId;
+        $cacheName = self::CACHE_SETTINGS_PREFIX . $siteId;
 
         return [
             $cacheName,

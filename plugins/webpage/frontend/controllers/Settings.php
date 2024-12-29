@@ -29,30 +29,30 @@ class Settings extends Controller
             return $redirect;
         }
 
-        $siteID = Site::getSiteFromContext()->id;
-        $model = Setting::firstOrCreate([
-            'site_id' => $siteID
+        $siteId = Site::getSiteFromContext()->id;
+        $settings = Setting::firstOrCreate([
+            'site_id' => $siteId
         ]);
 
-        $this->initForm($model);
+        $this->initForm($settings);
         $this->pageTitle = 'webpage.frontend::lang.plugin.name';
     }
 
     public function onSave()
     {
-        $siteID = Site::getSiteFromContext()->id;
-        $modelID = Setting::where('site_id', $siteID)->first()->id;
+        $siteId = Site::getSiteFromContext()->id;
+        $settings = Setting::where('site_id', $siteId)->first()->id;
 
-        return $this->asExtension('FormController')->update_onSave($modelID);
+        return $this->asExtension('FormController')->update_onSave($settings);
     }
 
     public function onSwitchSite(): array
     {
         $result = [];
 
-        $model = Setting::where('site_id', post('site_id'))->first();
+        $settings = Setting::where('site_id', post('site_id'))->first();
 
-        if(!$model) {
+        if(!$settings) {
             $result['confirm'] = __('A record does not exist for the selected site. Create one?');
         }
 

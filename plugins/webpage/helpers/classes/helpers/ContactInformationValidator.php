@@ -13,7 +13,8 @@ class ContactInformationValidator {
 
     private static function normalizePhoneNumber($number): string {
         // Remove all non-digit characters except +
-        return preg_replace('/[^\d+]/', '', $number);
+        $pattern = '/[^\d+]/';
+        return preg_replace($pattern, '', $number);
     }
 
     private static function isPhoneNumber($number): bool {
