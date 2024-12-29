@@ -1,6 +1,7 @@
 <?php namespace Webpage\Frontend\Models;
 
 use Model;
+use Webpage\Frontend\Classes\SettingsCache;
 
 class Setting extends Model
 {
@@ -30,4 +31,8 @@ class Setting extends Model
     ];
 
     public $rules = [];
+
+    public function afterSave() {
+        SettingsCache::setSettingsCache();
+    }
 }

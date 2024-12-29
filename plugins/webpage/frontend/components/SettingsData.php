@@ -1,14 +1,13 @@
 <?php namespace Webpage\Frontend\Components;
 
-use Site;
-use Webpage\Frontend\Models\Setting;
+use Webpage\Frontend\Classes\SettingsCache;
 use Webpage\Helpers\Classes\Helpers\BaseComponent;
 
 class SettingsData extends BaseComponent
 {
     public $record = null;
 
-    public function componentDetails(): array
+    public function componentDetails()
     {
         return [
             'name' => 'Frontend Settings',
@@ -16,16 +15,8 @@ class SettingsData extends BaseComponent
         ];
     }
 
-    public function onRun(): void
+    public function onRun()
     {
-        $this->setVariable('record', $this->loadSettings());
-    }
-    
-    protected function loadSettings(): ?Setting
-    {
-        $siteID = Site::getSiteFromContext()->id;
-        $settings = Setting::where('site_id', $siteID)->first();
-
-        return $settings;
+        $this->setVariable('record', SettingsCache::getSettingsCache());
     }
 }
