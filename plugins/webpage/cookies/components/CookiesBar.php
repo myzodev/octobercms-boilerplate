@@ -18,7 +18,8 @@ class CookiesBar extends BaseComponent
 
     public function onRun(): void
     {
-        $this->addJs('/plugins/webpage/cookies/assets/js/cookie-bar.js');
+        $this->addJs('/plugins/webpage/cookies/assets/js/cookies-bar.js');
+        $this->addCss('/plugins/webpage/cookies/assets/css/cookies-bar.css');
     }
 
     public function componentDetails(): array
@@ -41,7 +42,7 @@ class CookiesBar extends BaseComponent
                 $cookies = CookieSetting::getCookies();
                 break;
             case 'deny-all':
-                $cookies = CookieSetting::getRequiredCookies();    
+                $cookies = CookieSetting::getRequiredCookies();
                 break;
             case 'allow-selection':
                 $cookies = CookieSetting::getSelectedCookies($cookies);

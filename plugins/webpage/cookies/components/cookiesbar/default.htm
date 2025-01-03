@@ -6,9 +6,11 @@
     {% endif %}
 
     {% if show and settings is not null %}
-        <form id="cookies-form" class="p-16 w-full fixed left-0 bottom-0 z-100">
-            {% partial __SELF__ ~ '::cookie-bar-' ~ settings.cookie_bar_mode  %}
-        </form>
+        <div id="cookies-bar" class="p-16 w-full fixed left-0 bottom-0 overflow-y-auto z-100">
+            <form>
+                {% partial __SELF__ ~ '::cookie-bar-' ~ settings.cookie_bar_mode  %}
+            </form>
+        </div>
     {% endif %}
     
     {% put scripts %}

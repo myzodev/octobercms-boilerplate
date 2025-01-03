@@ -115,7 +115,7 @@ tabs:
                         label: 'webpage.cookies::lang.buttons.style'
                         options:
                             button-primary: Primary
-                            button-secondary: Secondary
+                            button-primary-outline: Primary - Outline
                         showSearch: true
                         span: right
                         type: dropdown

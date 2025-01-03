@@ -1,11 +1,11 @@
-<div class="p-24 md:p-32 mx-auto max-w-[1100px] rounded-16 bg-neutral-30">
+<div class="p-24 md:p-32 mx-auto max-w-[1100px] rounded-16 shadow-2xl bg-neutral-10">
     <h4 class="mb-10">{{ settings.cookie_bar_title }}</h4>
     <p class="text-base">{{ settings.cookie_bar_description }}</p>
     
     <div class="my-16 flex flex-wrap gap-16 items-center">
         {% for cookie in settings.cookies %}
             <label 
-                class="py-16 md:py-24 mb-0 flex flex-1 flex-col items-center rounded-16 bg-neutral-20 {{ cookie.is_required ? 'pointer-events-none opacity-50' : 'cursor-pointer' }}" 
+                class="py-16 md:py-24 mb-0 min-w-[200px] flex flex-1 flex-col items-center rounded-16 bg-neutral-30 {{ cookie.is_required ? 'pointer-events-none opacity-50' : 'cursor-pointer' }}" 
                 for="{{ cookie.cookie_slug }}"
             >
                 <input
