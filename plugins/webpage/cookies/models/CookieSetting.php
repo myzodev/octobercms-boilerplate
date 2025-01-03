@@ -19,16 +19,17 @@ class CookieSetting extends SettingModel
         'cookie_bar_description' => 'required'
     ];
 
-    const COOKIE_PREFIX = 'cookies-';
+    private const COOKIE_PREFIX = 'cookies-';
 
     public static function getCookies(): array
     {
         $cookies = [];
+        $cookiesData = self::get('cookies'); // Get cookies from SettingModel 
 
-        if (self::get('cookies')) {
-            foreach (self::get('cookies') as $cookie) {
-                $cookies[$cookie['cookie_slug']] = $cookie;
-            }
+        if (empty($cookiesData)) return [];
+
+        foreach ($cookiesData as $cookie) {
+            $cookies[$cookie['cookie_slug']] = $cookie;
         }
 
         return $cookies;
@@ -37,11 +38,13 @@ class CookieSetting extends SettingModel
     public static function getRequiredCookies(): array
     {
         $requiredCookies = [];
+        $cookiesData = self::getCookies();
 
-        foreach (self::getCookies() as $cookie) {
-            if ($cookie['is_required']) {
-                $requiredCookies[$cookie['cookie_slug']] = $cookie;
-            }
+        if (empty($cookiesData)) return [];
+
+        foreach ($cookiesData as $cookie) {
+            if (!$cookie['is_required']) continue;
+            $requiredCookies[$cookie['cookie_slug']] = $cookie;
         }
 
         return $requiredCookies;
@@ -49,13 +52,14 @@ class CookieSetting extends SettingModel
 
     public static function getSelectedCookies($selectedCookies): array
     {
-        $cookies = self::getCookies();
+        if (empty($selectedCookies)) return [];
+
         $matchingCookies = [];
+        $cookiesData = self::getCookies();
 
         foreach ($selectedCookies as $selectedCookie => $value) {
-            if (isset($cookies[$selectedCookie])) {
-                $matchingCookies[$selectedCookie] = $cookies[$selectedCookie];
-            }
+            if (!isset($cookiesData[$selectedCookie])) continue;
+            $matchingCookies[$selectedCookie] = $cookiesData[$selectedCookie];
         }
 
         return $matchingCookies;
@@ -64,15 +68,16 @@ class CookieSetting extends SettingModel
     public static function getAcceptedCookies(): array
     {
         $acceptedCookies = [];
+        $cookiesData = self::getCookies();
 
         foreach ($_COOKIE as $cookie => $value) {
-            if (strpos($cookie, self::COOKIE_PREFIX) === 0) {
-                $cookieSlug = substr($cookie, strlen(self::COOKIE_PREFIX));
+            if (strpos($cookie, self::COOKIE_PREFIX) !== 0) continue;
 
-                if (isset(self::getCookies()[$cookieSlug])) {
-                    $acceptedCookies[$cookieSlug] = self::getCookies()[$cookieSlug];
-                }
-            }
+            $cookieSlug = substr($cookie, strlen(self::COOKIE_PREFIX));
+
+            if (!isset($cookiesData[$cookieSlug])) continue;
+
+            $acceptedCookies[$cookieSlug] = $cookiesData[$cookieSlug];
         }
 
         return $acceptedCookies;
@@ -82,16 +87,11 @@ class CookieSetting extends SettingModel
     {
         foreach (self::getCookies() as $cookie) {
             $cookieKey = self::COOKIE_PREFIX . $cookie['cookie_slug'];
-
-            if ($cookie['is_required'] && empty($_COOKIE[$cookieKey])) {
-                return false;
-            }
+            if ($cookie['is_required'] && empty($_COOKIE[$cookieKey])) return false;
         }
 
         foreach ($_COOKIE as $cookie => $value) {
-            if (strpos($cookie, self::COOKIE_PREFIX) === 0) {
-                return true;
-            }
+            if (strpos($cookie, self::COOKIE_PREFIX) === 0) return true;
         }
 
         return false;

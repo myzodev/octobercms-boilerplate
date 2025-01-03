@@ -32,27 +32,23 @@ class CookiesBar extends BaseComponent
     protected function onConsent(): void
     {
         $cookies = post(); // Accepted cookies from user
-        $consent = $cookies['consent'];
+        $consent = $cookies['consent'] ?? '';
 
-        array_pop($cookies); // Remove consent (array_pop since consent is always last)
+        array_pop($cookies); // Remove consent from array (array_pop since consent is always last)
 
-        // Allow all cookies
-        if ($consent === 'allow-all') {
-            $cookies = CookieSetting::getCookies();
-        }
-
-        // Allow only required cookies
-        if ($consent === 'deny-all') {
-            $cookies = CookieSetting::getRequiredCookies();
-        }
-
-        // Allow selection and check if any cookies have been accepted
-        if ($consent === 'allow-selection') {
-            $cookies = CookieSetting::getSelectedCookies($cookies);
-        }
-
-        if (empty($cookies)) {
-            $cookies = CookieSetting::getRequiredCookies();
+        switch ($consent) {
+            case 'allow-all':
+                $cookies = CookieSetting::getCookies();
+                break;
+            case 'deny-all':
+                $cookies = CookieSetting::getRequiredCookies();    
+                break;
+            case 'allow-selection':
+                $cookies = CookieSetting::getSelectedCookies($cookies);
+                break;
+            default:
+                $cookies = CookieSetting::getRequiredCookies();
+                break;
         }
 
         CookieSetting::setCookies($cookies);
