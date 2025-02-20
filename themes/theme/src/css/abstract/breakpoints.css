@@ -1,0 +1,13 @@
+@theme {
+    --breakpoint-*: initial;
+    --breakpoint-sm: 580px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+}
+
+@utility container {
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+}

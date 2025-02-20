@@ -1,0 +1,17 @@
+@layer components {
+	[x-cloak] {
+		@apply hidden;
+	}
+
+	.link-overlay:before {
+        @apply content-[''] absolute inset-0 z-0;
+	}
+
+    .link-overlay-box {
+        @apply relative;
+    }
+
+    .link-overlay-box a:not(.link-overlay) {
+        @apply relative z-10;
+    }
+}

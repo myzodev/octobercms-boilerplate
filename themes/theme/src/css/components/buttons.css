@@ -1,0 +1,45 @@
+@layer components {
+    .button {
+        @apply px-[20px] py-[14px] font-semibold rounded-8 transition-colors;
+    }
+
+    .button-sm {
+        @apply px-[18px] py-[12px] font-semibold rounded-8 text-sm transition-colors;
+    }
+
+    .button-xs {
+        @apply px-[14px] py-[10px] font-semibold rounded-8 text-xs transition-colors;
+    }
+
+    .button-primary {
+        @apply text-neutral-10 bg-primary-300;
+    }
+
+    .button-primary:hover {
+        @apply bg-primary-200;
+    }
+
+    .button-primary-outline {
+        @apply text-primary-300 border border-primary-300;
+    }
+
+    .button-primary-outline:hover {
+        @apply bg-primary-300/15;
+    }
+
+    .button-primary-ghost {
+        @apply text-primary-300;
+    }
+
+    .button-primary-ghost:hover {
+        @apply bg-primary-300/15;
+    }
+
+    .button-link {
+        @apply text-primary-300;
+    }
+
+    .button-link:hover {
+        @apply underline;
+    }
+}

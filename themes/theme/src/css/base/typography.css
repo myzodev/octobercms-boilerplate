@@ -1,0 +1,39 @@
+@layer base {
+    h1,
+    .h1 {
+        @apply text-[2.48rem] md:text-[3.052rem] lg:text-[3.815rem] font-heading font-bold leading-[115%];
+    }
+
+    h2,
+    .h2 {
+        @apply text-[1.984rem] md:text-[2.441rem] lg:text-[3.052rem] font-heading font-bold leading-[120%];
+    }
+
+    h3,
+    .h3 {
+        @apply text-[1.587rem] md:text-[1.953rem] lg:text-[2.441rem] font-heading font-bold leading-[125%];
+    }
+
+    h4,
+    .h4 {
+        @apply text-[1.27rem] md:text-[1.562rem] lg:text-[1.953rem] font-heading font-bold leading-[130%];
+    }
+
+    h5,
+    .h5 {
+        @apply text-[1.016rem] md:text-[1.25rem] lg:text-[1.563rem] font-heading font-bold leading-[135%];
+    }
+
+    h6,
+    .h6 {
+        @apply text-[0.812rem] md:text-[1rem] lg:text-[1.25rem] font-heading font-bold leading-[140%];
+    }
+
+	small {
+		@apply text-sm;
+	}
+
+    .display {
+        @apply text-[3.64rem] md:text-[4.48rem] lg:text-[5.6rem] leading-[115%] font-heading;
+    }
+}

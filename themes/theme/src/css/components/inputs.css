@@ -1,0 +1,30 @@
+@layer components {
+    .input {
+        @apply px-16 py-[12px] outline-none border border-neutral-80 rounded-8 transition-colors;
+    }
+
+    .input::placeholder {
+        @apply text-neutral-80;
+    }
+
+    .input:focus {
+        @apply border-primary-300;
+    }
+
+    .input-sm {
+        @apply px-[14px] py-[10px] text-sm;
+    }
+
+    .input-label {
+        @apply block font-bold;
+    }
+
+    .switch {
+        @apply w-40 h-24 relative shrink-0 bg-neutral-40;
+    }
+
+    .switch::after {
+        content: "";
+        @apply size-[16px] absolute top-[4px] left-[4px] rounded-full bg-neutral-10 transition-all;
+    }
+}

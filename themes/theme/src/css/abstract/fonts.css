@@ -1,0 +1,23 @@
+@theme {
+    --font-*: initial;
+    --font-heading: "Lato", sans-serif;
+    --font-body: "NunitoSans", sans-serif;
+
+    --test-*: initial;
+
+    --test-xs: 0.75rem;
+    --text-xs--line-height: 150%;
+    --text-xs--font-weight: 500;
+        
+    --test-sm: 0.88rem;
+    --text-sm--line-height: 150%;
+    --text-sm--font-weight: 500;
+
+    --test-base: 1rem;
+    --text-base--line-height: 150%;
+    --text-base--font-weight: 500;
+
+    --test-subheading: 1.13rem;
+    --text-subheading--line-height: 150%;
+    --text-subheading--font-weight: 500;
+}

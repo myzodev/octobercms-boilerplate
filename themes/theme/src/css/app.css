@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@source "../js";
+@source "../../layouts";
+@source "../../pages";
+@source "../../partials";
+@source "../../../../plugins/webpage";
+
+@import "./abstract/breakpoints.css";
+@import "./abstract/spacings.css";
+@import "./abstract/fonts.css";
+@import "./abstract/colors.css";
+@import "./abstract/borders.css";
+
+@import "./base/base.css";
+@import "./base/typography.css";
+
+@import "./components/buttons.css";
+@import "./components/inputs.css";
+
+@import "./utilities/classes.css";
+@import "./utilities/grid.css";

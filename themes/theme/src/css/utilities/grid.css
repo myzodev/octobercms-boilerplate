@@ -1,0 +1,25 @@
+@layer components {
+    .section-offset {
+        @apply py-120 xl:py-160;
+    }
+
+    .section-offset-top {
+        @apply pt-120 xl:pt-160;
+    }
+
+    .section-offset-bottom {
+        @apply pb-120 xl:pb-160;
+    }
+
+    .section-offset-small {
+        @apply py-88 xl:py-120;
+    }
+
+    .section-offset-small-top {
+        @apply pt-88 xl:pt-120;
+    }
+
+    .section-offset-small-bottom {
+        @apply pb-88 xl:pb-120;
+    }
+}
