@@ -1,6 +1,6 @@
 # OctoberCMS Boilerplate
 
-This repository provides a **boilerplate** for building projects with **OctoberCMS**. It is pre-configured with a modern frontend workflow, including **TailwindCSS**, **Alpine.js**, and a basic **JavaScript** and **SASS** folder structure. The goal is to streamline development by offering a ready-to-use setup, saving time on initial configuration.
+This repository provides a **boilerplate** for building projects with **OctoberCMS**. It is pre-configured with a modern frontend workflow, including **TailwindCSS**, **Alpine.js**, and a basic **JavaScript** and **CSS** folder structure. The goal is to streamline development by offering a ready-to-use setup, saving time on initial configuration.
 
 [October](https://octobercms.com) is a Content Management System (CMS) and web platform whose sole purpose is to make your development workflow simple again. It was born out of frustration with existing systems.
 
@@ -9,8 +9,8 @@ This repository provides a **boilerplate** for building projects with **OctoberC
 ## Features
 
 - **OctoberCMS**: A Laravel-based CMS framework for building modern websites and applications.
-- **Basic JavaScript & SASS structure**: Organized folder structure for custom frontend development.
-- **TailwindCSS**: A utility-first CSS framework for rapid UI development.
+- **Basic JavaScript & CSS structure**: Organized folder structure for custom frontend development.
+- **TailwindCSS v4**: A utility-first CSS framework for rapid UI development.
 - **Alpine.js**: A minimal, declarative JavaScript framework for adding interactivity.
 - **Prettier**: A code formatter to ensure consistent code styling across the project.
 - **Vite**: A fast and optimized build tool for modern web projects.
@@ -26,7 +26,7 @@ This repository provides a **boilerplate** for building projects with **OctoberC
 
 Clone the repository:
 ```bash
-git clone https://github.com/myzo-dev/octobercms-boilerplate.git
+git clone https://github.com/myzodev/octobercms-boilerplate.git
 ```
 Navigate to the project directory:
 ```bash
