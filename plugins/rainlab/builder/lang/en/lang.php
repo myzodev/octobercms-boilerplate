@@ -399,7 +399,7 @@
     'property_datatable_width_regex' => 'Width must be a number in pixels',
     'property_datatable_adding' => 'Allow Adding',
     'property_datatable_adding_description' => 'Allow records to be added.',
-    'property_datatable_deleting' => 'Allow Adding',
+    'property_datatable_deleting' => 'Allow Deleting',
     'property_datatable_deleting_description' => 'Allow records to be deleted.',
     'property_datatable_searching' => 'Searching',
     'property_datatable_searching_description' => 'Allow records to be searched.',
@@ -738,7 +738,7 @@
   ],
   'common' => [
     'error_file_exists' => 'File already exists: \':path\'.',
-    'field_icon_description' => 'October CMS uses Font Awesome icons: http://octobercms.com/docs/ui/icon',
+    'field_icon_description' => 'October CMS uses Font Awesome icons: https://octobercms.com/docs/ui/icon',
     'destination_dir_not_exists' => 'The destination directory doesn\'t exist: \':path\'.',
     'error_make_dir' => 'Error creating directory: \':name\'.',
     'error_dir_exists' => 'Directory already exists: \':path\'.',

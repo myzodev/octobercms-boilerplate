@@ -13,3 +13,7 @@
 2.0.10: 'Added support for Vite 5'
 2.0.11: 'Added child theme support'
 2.0.12: 'Child theme bugfix'
+2.0.13: 'Added October 4 support'
+2.0.14: 'Added October 4 support'
+2.1.0: 'Fixed support for Ocober 4'
+2.1.1: 'Optimized PHP version compatibility'

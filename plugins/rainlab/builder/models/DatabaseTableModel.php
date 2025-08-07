@@ -1,11 +1,13 @@
 <?php namespace RainLab\Builder\Models;
 
+use Doctrine\DBAL\DriverManager;
+use Doctrine\DBAL\Configuration;
+use Doctrine\DBAL\Types\Type;
 use RainLab\Builder\Classes\DatabaseTableSchemaCreator;
 use RainLab\Builder\Classes\EnumDbType;
 use RainLab\Builder\Classes\MigrationColumnType;
 use RainLab\Builder\Classes\PluginCode;
 use RainLab\Builder\Classes\TableMigrationCodeGenerator;
-use Doctrine\DBAL\Types\Type;
 use ApplicationException;
 use ValidationException;
 use SystemException;
@@ -406,19 +408,71 @@ class DatabaseTableModel extends BaseModel
      */
     protected static function getSchemaManager()
     {
-        if (!self::$schemaManager) {
-            self::$schemaManager = Schema::getConnection()->getDoctrineSchemaManager();
-
-            Type::addType('enumdbtype', \RainLab\Builder\Classes\EnumDbType::class);
-
-            // Fixes the problem with enum column type not supported
-            // by Doctrine (https://github.com/laravel/framework/issues/1346)
-            $platform = self::$schemaManager->getDatabasePlatform();
-            $platform->registerDoctrineTypeMapping('enum', 'enumdbtype');
-            $platform->registerDoctrineTypeMapping('json', 'text');
+        if (self::$schemaManager) {
+            return self::$schemaManager;
         }
 
+        $connection = static::getDoctrineConnection();
+        self::$schemaManager = $connection->createSchemaManager();
+
+        Type::addType('enumdbtype', \RainLab\Builder\Classes\EnumDbType::class);
+
+        // Fixes the problem with enum column type not supported
+        // by Doctrine (https://github.com/laravel/framework/issues/1346)
+        $platform = $connection->getDatabasePlatform();
+        $platform->registerDoctrineTypeMapping('enum', 'enumdbtype');
+        $platform->registerDoctrineTypeMapping('json', 'text');
+
         return self::$schemaManager;
+    }
+
+    /**
+     * getDoctrineConnection returns an instance of the doctrine connection
+     */
+    protected static function getDoctrineConnection()
+    {
+        // Get Laravel connection and driver name
+        $connection = Db::connection();
+        $driver = $connection->getDriverName();
+
+        // Map Laravel drivers to Doctrine drivers
+        $doctrineDriver = match ($driver) {
+            'mysql', 'mariadb' => 'pdo_mysql',
+            'pgsql' => 'pdo_pgsql',
+            'sqlite' => 'pdo_sqlite',
+            'sqlsrv' => 'pdo_sqlsrv',
+            default => throw new \InvalidArgumentException("Unsupported driver: {$driver}"),
+        };
+
+        // Get full config array for this connection
+        $configArray = config('database.connections.' . $connection->getName());
+
+        // Build Doctrine connection params
+        $params = [
+            'driver' => $doctrineDriver,
+            'host' => $configArray['host'] ?? null,
+            'port' => $configArray['port'] ?? null,
+            'user' => $configArray['username'] ?? null,
+            'password' => $configArray['password'] ?? null,
+            'dbname' => $configArray['database'] ?? null,
+            'charset' => $configArray['charset'] ?? null,
+        ];
+
+        // SQLite: file path is in 'database'
+        if ($doctrineDriver === 'pdo_sqlite') {
+            $params['path'] = $configArray['database'];
+            unset($params['host'], $params['port'], $params['dbname']);
+        }
+
+        // Remove null values (Doctrine expects only populated keys)
+        $params = array_filter($params, static fn($v) => !is_null($v));
+
+        // Support sslmode for pgsql
+        if (isset($configArray['sslmode'])) {
+            $params['sslmode'] = $configArray['sslmode'];
+        }
+
+        return DriverManager::getConnection($params, new Configuration);
     }
 
     /**

@@ -1,25 +1,25 @@
 @layer components {
-    .section-offset {
-        @apply py-120 xl:py-160;
-    }
+	.section-offset {
+		@apply py-30 xl:py-40;
+	}
 
-    .section-offset-top {
-        @apply pt-120 xl:pt-160;
-    }
+	.section-offset-top {
+		@apply pt-30 xl:pt-40;
+	}
 
-    .section-offset-bottom {
-        @apply pb-120 xl:pb-160;
-    }
+	.section-offset-bottom {
+		@apply pb-30 xl:pb-40;
+	}
 
-    .section-offset-small {
-        @apply py-88 xl:py-120;
-    }
+	.section-offset-small {
+		@apply py-22 xl:py-8;
+	}
 
-    .section-offset-small-top {
-        @apply pt-88 xl:pt-120;
-    }
+	.section-offset-small-top {
+		@apply pt-22 xl:pt-8;
+	}
 
-    .section-offset-small-bottom {
-        @apply pb-88 xl:pb-120;
-    }
+	.section-offset-small-bottom {
+		@apply pb-22 xl:pb-8;
+	}
 }

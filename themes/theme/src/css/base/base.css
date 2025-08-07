@@ -1,19 +1,19 @@
 @layer base {
 	body {
-		@apply antialiased font-body text-base text-neutral-900 bg-background;
+		@apply antialiased font-body sans-md text-neutral-900 bg-background;
 	}
 
 	a {
 		@apply inline-block;
 	}
 
-	p,
+	span,
 	small {
 		@apply block;
 	}
 
 	img,
 	svg {
-		@apply w-full h-full;
+		@apply size-full;
 	}
 }

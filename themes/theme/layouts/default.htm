@@ -14,30 +14,33 @@ function onStart()
 ==
 {% set settings = webpageSettings.record %}
 
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="{{ this.site.locale|default('en') }}">
-	<head>
-        {% partial 'layout/meta' %}
-	</head>
-	<body>
-        {% component 'cookiesBar' %}
 
-        {% flash %}
-            <p class="alert alert-{{ type }}" data-interval="20">{{ message }}</p>
-        {% endflash %}
-    
-        <header>
-            {% partial 'layout/navbar' %}
-        </header>
+<head>
+  {% partial 'layout/meta' %}
+</head>
 
-        <main>
-            {% page %}
-        </main>
+<body>
+  {% component 'cookiesBar' %}
 
-        <footer>
-            {% partial 'layout/footer' %}
-        </footer>
+  {% flash %}
+  <p class="alert alert-{{ type }}" data-interval="20">{{ message }}</p>
+  {% endflash %}
 
-        {% scripts %}
-	</body>
+  <header>
+    {% partial 'layout/navbar' %}
+  </header>
+
+  <main>
+    {% page %}
+  </main>
+
+  <footer>
+    {% partial 'layout/footer' %}
+  </footer>
+
+  {% scripts %}
+</body>
+
 </html>

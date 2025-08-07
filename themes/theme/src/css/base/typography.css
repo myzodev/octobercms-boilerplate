@@ -1,39 +1,84 @@
-@layer base {
-    h1,
-    .h1 {
-        @apply text-[2.48rem] md:text-[3.052rem] lg:text-[3.815rem] font-heading font-bold leading-[115%];
-    }
+@utility display-2xl {
+	font-size: var(--text-display-2xl);
+	line-height: var(--leading-display-2xl);
+	font-family: var(--font-display);
+	letter-spacing: -2%;
+	font-feature-settings: 'ss01' 1;
+}
 
-    h2,
-    .h2 {
-        @apply text-[1.984rem] md:text-[2.441rem] lg:text-[3.052rem] font-heading font-bold leading-[120%];
-    }
+@utility display-xl {
+	font-size: var(--text-display-xl);
+	line-height: var(--leading-display-xl);
+	font-family: var(--font-display);
+	font-feature-settings: 'ss01' 1;
+	letter-spacing: -2%;
+}
 
-    h3,
-    .h3 {
-        @apply text-[1.587rem] md:text-[1.953rem] lg:text-[2.441rem] font-heading font-bold leading-[125%];
-    }
+@utility display-lg {
+	font-size: var(--text-display-lg);
+	line-height: var(--leading-display-lg);
+	font-family: var(--font-display);
+	font-feature-settings: 'ss01' 1;
+	letter-spacing: -2%;
+}
 
-    h4,
-    .h4 {
-        @apply text-[1.27rem] md:text-[1.562rem] lg:text-[1.953rem] font-heading font-bold leading-[130%];
-    }
+@utility display-md {
+	font-size: var(--text-display-md);
+	line-height: var(--leading-display-md);
+	font-family: var(--font-display);
+	font-feature-settings: 'ss01' 1;
+}
 
-    h5,
-    .h5 {
-        @apply text-[1.016rem] md:text-[1.25rem] lg:text-[1.563rem] font-heading font-bold leading-[135%];
-    }
+@utility display-sm {
+	font-size: var(--text-display-sm);
+	line-height: var(--leading-display-sm);
+	font-family: var(--font-display);
+	font-feature-settings: 'ss01' 1;
+}
 
-    h6,
-    .h6 {
-        @apply text-[0.812rem] md:text-[1rem] lg:text-[1.25rem] font-heading font-bold leading-[140%];
-    }
+@utility display-xs {
+	font-size: var(--text-display-xs);
+	line-height: var(--leading-display-xs);
+	font-family: var(--font-display);
+	font-feature-settings: 'ss01' 1;
+}
 
-	small {
-		@apply text-sm;
-	}
+@utility display-xxs {
+	font-size: var(--text-display-xxs);
+	line-height: var(--leading-display-xxs);
+	font-family: var(--font-display);
+	font-feature-settings: 'ss01' 1;
+}
 
-    .display {
-        @apply text-[3.64rem] md:text-[4.48rem] lg:text-[5.6rem] leading-[115%] font-heading;
-    }
+@utility sans-2xl {
+	font-size: var(--text-sans-2xl);
+	line-height: var(--leading-sans-2xl);
+	letter-spacing: -2%;
+}
+
+@utility sans-xl {
+	font-size: var(--text-sans-xl);
+	line-height: var(--leading-sans-xl);
+	letter-spacing: -2%;
+}
+
+@utility sans-lg {
+	font-size: var(--text-sans-lg);
+	line-height: var(--leading-sans-lg);
+	letter-spacing: -1%;
+}
+
+@utility sans-md {
+	font-size: var(--text-sans-md);
+	line-height: var(--leading-sans-md);
+}
+
+@utility sans-sm {
+	font-size: var(--text-sans-sm);
+	line-height: var(--leading-sans-sm);
+}
+
+@utility sans-xs {
+	font-size: var(--text-sans-xs);
+	line-height: var(--leading-sans-xs);
 }

@@ -14,6 +14,6 @@ const init = () => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    init()
+	init()
 	Alpine.start()
 })
