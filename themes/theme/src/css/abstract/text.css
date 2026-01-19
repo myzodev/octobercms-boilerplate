@@ -18,6 +18,9 @@
 	--text-display-xs: 1.5rem;
 	--leading-display-xs: 2rem;
 
+	--text-display-xxs: 1.25rem;
+	--leading-display-xxs: 130%;
+
 	/* Text sans */
 	--text-sans-2xl: 1.5rem;
 	--leading-sans-2xl: 1.75rem;

@@ -1,14 +1,14 @@
 @layer components {
 	.button {
-		@apply px-5 py-4 font-semibold rounded-8 transition-colors;
+		@apply rounded-8 cursor-pointer px-4 py-2 font-semibold transition-colors;
 	}
 
 	.button-sm {
-		@apply px-4 py-2 font-semibold rounded-8 text-sm transition-colors;
+		@apply rounded-8 sans-sm cursor-pointer px-3 py-1.5 font-semibold transition-colors;
 	}
 
 	.button-xs {
-		@apply px-3 py-1.5 font-semibold rounded-8 text-xs transition-colors;
+		@apply rounded-8 sans-xs cursor-pointer px-2 py-1 font-semibold transition-colors;
 	}
 
 	.button-primary {
@@ -20,7 +20,7 @@
 	}
 
 	.button-primary-outline {
-		@apply text-primary-300 border border-primary-300;
+		@apply text-primary-300 border-primary-300 border;
 	}
 
 	.button-primary-outline:hover {
@@ -36,7 +36,7 @@
 	}
 
 	.button-link {
-		@apply text-primary-300;
+		@apply text-primary-300 cursor-pointer;
 	}
 
 	.button-link:hover {

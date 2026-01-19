@@ -3,14 +3,12 @@
 	line-height: var(--leading-display-2xl);
 	font-family: var(--font-display);
 	letter-spacing: -2%;
-	font-feature-settings: 'ss01' 1;
 }
 
 @utility display-xl {
 	font-size: var(--text-display-xl);
 	line-height: var(--leading-display-xl);
 	font-family: var(--font-display);
-	font-feature-settings: 'ss01' 1;
 	letter-spacing: -2%;
 }
 
@@ -18,7 +16,6 @@
 	font-size: var(--text-display-lg);
 	line-height: var(--leading-display-lg);
 	font-family: var(--font-display);
-	font-feature-settings: 'ss01' 1;
 	letter-spacing: -2%;
 }
 
@@ -26,28 +23,24 @@
 	font-size: var(--text-display-md);
 	line-height: var(--leading-display-md);
 	font-family: var(--font-display);
-	font-feature-settings: 'ss01' 1;
 }
 
 @utility display-sm {
 	font-size: var(--text-display-sm);
 	line-height: var(--leading-display-sm);
 	font-family: var(--font-display);
-	font-feature-settings: 'ss01' 1;
 }
 
 @utility display-xs {
 	font-size: var(--text-display-xs);
 	line-height: var(--leading-display-xs);
 	font-family: var(--font-display);
-	font-feature-settings: 'ss01' 1;
 }
 
 @utility display-xxs {
 	font-size: var(--text-display-xxs);
 	line-height: var(--leading-display-xxs);
 	font-family: var(--font-display);
-	font-feature-settings: 'ss01' 1;
 }
 
 @utility sans-2xl {

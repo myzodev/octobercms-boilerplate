@@ -1,13 +1,13 @@
 ==
 <?php
-    use Cms\Classes\Theme;
+  use Cms\Classes\Theme;
 
-    function onStart() {
-        $theme = Theme::getActiveTheme();
-        $themeName = $theme->getDirName();
-        
-        $this['svgContents'] = File::get(base_path("themes/{$themeName}/assets/{$this->file}"));
-    }
+  function onStart() {
+    $theme = Theme::getActiveTheme();
+    $themeName = $theme->getDirName();
+      
+    $this['svgContents'] = File::get(base_path("themes/{$themeName}/assets/{$this->file}"));
+  }
 ?>
 ==
 {{ svgContents|raw }}
