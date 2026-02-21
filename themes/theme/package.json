@@ -1,5 +1,5 @@
 {
-	"name": "october-theme",
+	"name": "october-boilerplate",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",

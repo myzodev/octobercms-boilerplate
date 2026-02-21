@@ -4,7 +4,7 @@ This repository provides a **boilerplate** for building projects with **OctoberC
 
 [October](https://octobercms.com) is a Content Management System (CMS) and web platform whose sole purpose is to make your development workflow simple again. It was born out of frustration with existing systems.
 
-> _Please note_: October is open source but it is not free software. A license with a small fee is required for each website you build with October CMS.
+> _Please note_: October is open source but it is not free software. A license with a small fee is required for each website you build with OctoberCMS.
 
 ## Features
 
@@ -60,6 +60,16 @@ APP_ENV: local # or production
 ```
 
 **_Do not forget to set `APP_ENV` to `production` when done with development._**
+
+## Renaming the theme
+
+If you rename the theme folder, update the theme name everywhere so assets and tooling keep working:
+
+-   **Theme folder**: Rename `themes/theme` to `themes/your-theme-name`.
+-   **`themes/your-theme-name/vite.config.ts`**: Set `const themeName = "your-theme-name";` so the Vite `base` path matches the theme.
+-   **`themes/your-theme-name/theme.yaml`**: Update `name` (and optionally `description`, `author`, `homepage`).
+-   **`.vscode/settings.json`**: Update `octoberCode.prettierrcPath` to the new theme path, e.g. `"./themes/your-theme-name/.prettierrc"`.
+-   **`themes/your-theme-name/package.json`** (optional): Update the `name` field if you use it for identification.
 
 ## License
 

@@ -18,5 +18,5 @@
     "tailwindCSS.includeLanguages": {
         "october-tpl": "html"
     },
-    "octoberCode.prettierrcPath": "./themes/racetime-2025/.prettierrc"
+    "octoberCode.prettierrcPath": "./themes/theme/.prettierrc"
 }
