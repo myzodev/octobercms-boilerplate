@@ -1,15 +1,13 @@
 description = "Maintenance layout"
 ==
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ this.site.locale|default('en') }}">
-	<head>
-		{% partial "layout/meta" %}
-	</head>
-	<body>
-        <main>
-            {% page %}
-        </main>
+  <head>
+    {% partial "layout/meta" %}
+  </head>
+  <body>
+    <main>{% page %}</main>
 
-        {% scripts %}
-	</body>
+    {% scripts %}
+  </body>
 </html>

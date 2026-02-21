@@ -6,16 +6,16 @@
 		"build": "vite build"
 	},
 	"devDependencies": {
-		"@tailwindcss/vite": "^4.1.18",
+		"@tailwindcss/vite": "^4.2.0",
 		"@types/alpinejs": "^3.13.11",
-		"@types/node": "^25.0.9",
-		"prettier": "^3.8.0",
+		"@types/node": "^25.3.0",
+		"prettier": "^3.8.1",
 		"prettier-plugin-tailwindcss": "^0.7.2",
-		"tailwindcss": "^4.1.18",
+		"tailwindcss": "^4.2.0",
 		"typescript": "^5.9.3",
 		"vite": "^7.3.1"
 	},
 	"dependencies": {
-		"alpinejs": "^3.15.4"
+		"alpinejs": "^3.15.8"
 	}
 }

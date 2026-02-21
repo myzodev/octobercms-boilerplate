@@ -1,0 +1,22 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "files.associations": {
+        "**/themes/**/*.htm": "october-tpl",
+        "**/plugins/**/components/**/*.htm": "october-tpl",
+        "**/plugins/**/views/**/*.htm": "october-tpl",
+        "**/plugins/**/controllers/**/*.htm": "php"
+    },
+    "[october-tpl]": {
+        "editor.defaultFormatter": "SergeyKasyanov.october-code",
+        "editor.formatOnSave": true,
+        "editor.defaultFoldingRangeProvider": "SergeyKasyanov.october-code"
+    },
+    "emmet.includeLanguages": {
+        "october-tpl": "html"
+    },
+    "tailwindCSS.includeLanguages": {
+        "october-tpl": "html"
+    },
+    "octoberCode.prettierrcPath": "./themes/racetime-2025/.prettierrc"
+}

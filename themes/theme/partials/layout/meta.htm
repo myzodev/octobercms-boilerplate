@@ -16,12 +16,10 @@
 
 <link rel="icon" href="{{ settings.favicon|media }}" />
 
-{% partial 'layout/fonts' %} 
+{% partial 'layout/fonts' %}
 
-{{ vite([ 'src/css/app.css' ]) }} 
+{{ vite([ 'src/css/app.css' ]) }}
+{% styles %}
 
-{% styles %} 
-
-{{ vite([ 'src/js/app.ts' ]) }} 
-
+{{ vite([ 'src/js/app.ts' ]) }}
 {% framework extras %}

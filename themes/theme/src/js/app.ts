@@ -1,19 +1,19 @@
-import Alpine from 'alpinejs'
-import autoload from './autoload'
-import layout from './layout'
-import blocks from './blocks'
-import components from './components'
+import Alpine from "alpinejs";
+import autoload from "./autoload";
+import layout from "./layout";
+import blocks from "./blocks";
+import components from "./components";
 
-window.Alpine = Alpine
+window.Alpine = Alpine;
 
 const init = () => {
-	autoload()
-	layout()
-	blocks()
-	components()
-}
+	autoload();
+	layout();
+	blocks();
+	components();
+};
 
-document.addEventListener('DOMContentLoaded', () => {
-	init()
-	Alpine.start()
-})
+document.addEventListener("DOMContentLoaded", () => {
+	init();
+	Alpine.start();
+});

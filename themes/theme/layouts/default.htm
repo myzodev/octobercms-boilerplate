@@ -2,45 +2,39 @@ description = "Default layout"
 
 [webpageSettings]
 
+
 [cookiesBar]
+
 ==
 <?php
-function onStart() 
+function onStart()
 {
-    $this['loggedIn'] = BackendAuth::check();
-    $this['backendURL'] = Backend::url();
+  $this['loggedIn'] = BackendAuth::check();
+  $this['backendURL'] = Backend::url();
 }
 ?>
 ==
 {% set settings = webpageSettings.record %}
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ this.site.locale|default('en') }}">
+  <head>
+    {% partial 'layout/meta' %}
+  </head>
 
-<head>
-  {% partial 'layout/meta' %}
-</head>
+  <body>
+    {% component 'cookiesBar' %}
 
-<body>
-  {% component 'cookiesBar' %}
+    {% flash %}
+      <p class="alert alert-{{ type }}" data-interval="20">{{ message }}</p>
+    {% endflash %}
 
-  {% flash %}
-  <p class="alert alert-{{ type }}" data-interval="20">{{ message }}</p>
-  {% endflash %}
+    <header>{% partial 'layout/navbar' %}</header>
 
-  <header>
-    {% partial 'layout/navbar' %}
-  </header>
+    <main>{% page %}</main>
 
-  <main>
-    {% page %}
-  </main>
+    <footer>{% partial 'layout/footer' %}</footer>
 
-  <footer>
-    {% partial 'layout/footer' %}
-  </footer>
-
-  {% scripts %}
-</body>
-
+    {% scripts %}
+  </body>
 </html>

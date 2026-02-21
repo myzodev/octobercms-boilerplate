@@ -1,18 +1,23 @@
 {% if ext is empty %}
-{% set ext = 'jpeg' %}
+  {% set ext = 'jpeg' %}
 {% endif %}
-
 {% set imageExtension = image|split('.')|last %}
 
 {% if image %}
-{% if imageExtension == 'svg' %}
-{% partial "helpers/svg" file=image %}
-{% else %}
-<picture>
-  <source srcset="{{ image|makeThumb(width, height, 'webp', mode) }}" type="image/webp">
-  <source srcset="{{ image|makeThumb(width, height, ext, mode) }}" type="image/{{ ext }}">
-  <img class="{{ classes }}" src="{{ image|makeThumb(width, height, ext, mode, quality) }}" alt="{{ alt }}"
-    width="{{ width }}" height="{{ height }}" {% if lazyload %} loading="lazy" {% endif %} />
-</picture>
-{% endif %}
+  {% if imageExtension == 'svg' %}
+    {% partial "helpers/svg" file=image %}
+  {% else %}
+    <picture>
+      <source srcset="{{ image|makeThumb(width, height, 'webp', mode) }}" type="image/webp" />
+      <source srcset="{{ image|makeThumb(width, height, ext, mode) }}" type="image/{{ ext }}" />
+      <img
+        class="{{ classes }}"
+        src="{{ image|makeThumb(width, height, ext, mode, quality) }}"
+        alt="{{ alt }}"
+        width="{{ width }}"
+        height="{{ height }}"
+        {% if lazyload %}loading="lazy"{% endif %}
+      />
+    </picture>
+  {% endif %}
 {% endif %}

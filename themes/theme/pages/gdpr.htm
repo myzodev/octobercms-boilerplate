@@ -5,9 +5,10 @@ meta_title = "GDPR"
 meta_description = "GDPR"
 
 [gdpr]
+
 ==
 {% if not gdpr.title or not gdpr.text %}
-{% do abort(404) %}
+  {% do abort(404) %}
 {% endif %}
 
 <div class="container section-offset">

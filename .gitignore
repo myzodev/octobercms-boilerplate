@@ -14,7 +14,6 @@ nginx-ssl.error.log
 php-errors.log
 sftp-config.json
 .ftpconfig
-.vscode/
 selenium.php
 composer.lock
 package-lock.json

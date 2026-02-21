@@ -4,7 +4,7 @@
 	}
 
 	.link-overlay:before {
-		@apply content-[''] absolute inset-0 z-0;
+		@apply absolute inset-0 z-0 content-[''];
 	}
 
 	.link-overlay-box {

@@ -1,6 +1,6 @@
 @layer components {
 	.input {
-		@apply px-4 py-3 outline-none border border-neutral-80 rounded-8 transition-colors;
+		@apply rounded-8 border border-neutral-80 px-4 py-3 transition-colors outline-none;
 	}
 
 	.input::placeholder {
@@ -20,11 +20,11 @@
 	}
 
 	.switch {
-		@apply w-10 h-6 relative shrink-0 bg-neutral-40;
+		@apply relative h-6 w-10 shrink-0 bg-neutral-40;
 	}
 
 	.switch::after {
-		content: '';
-		@apply w-4 h-4 absolute top-1 left-1 rounded-full bg-neutral-10 transition-all;
+		content: "";
+		@apply absolute top-1 left-1 h-4 w-4 rounded-full bg-neutral-10 transition-all;
 	}
 }
