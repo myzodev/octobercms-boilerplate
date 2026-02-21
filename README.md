@@ -56,7 +56,7 @@ To include the _Vite Dev Server_ assets in your dev environment, set the `APP_EN
 For more detailed information, refer to the [OctoberCMS Vite Plugin](https://github.com/OFFLINE-GmbH/oc-vite-plugin).
 
 ```env
-APP_ENV: local # or dev
+APP_ENV: local # or production
 ```
 
 **_Do not forget to set `APP_ENV` to `production` when done with development._**
